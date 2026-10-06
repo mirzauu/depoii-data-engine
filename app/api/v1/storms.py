@@ -15,3 +15,12 @@ async def get_active_storm_swaths() -> GeoJSONFeatureCollection:
     Consumable directly by Leaflet / Mapbox GIS layers.
     """
     return _noaa_client.get_canonical_swaths()
+
+
+@router.get("/live-alerts")
+async def get_live_weather_alerts(state: str = "TX"):
+    """
+    Queries live real-time National Weather Service (NWS / NOAA) severe weather alerts
+    directly from api.weather.gov for the specified state.
+    """
+    return await _noaa_client.fetch_live_active_alerts(state=state)

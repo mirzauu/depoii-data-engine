@@ -50,13 +50,15 @@ def parse_accela_html_table(html: str, config: CityConfig) -> List[Dict[str, Any
     addr_col = cols.address if cols else 3
     date_col = cols.issue_date if cols else 4
     status_col = cols.status if cols else 5
+    desc_col = cols.description if cols and cols.description is not None else None
 
     parsed_records: List[Dict[str, Any]] = []
 
     for tr in rows:
         tds = tr.find_all(["td", "th"])
         # Skip header or empty rows
-        if not tds or len(tds) <= max(permit_col, type_col, addr_col, date_col, status_col):
+        min_required = max(permit_col, type_col, addr_col, date_col, status_col)
+        if not tds or len(tds) <= min_required:
             continue
 
         raw_permit_num = tds[permit_col].get_text(strip=True)
@@ -67,6 +69,7 @@ def parse_accela_html_table(html: str, config: CityConfig) -> List[Dict[str, Any
         address = tds[addr_col].get_text(strip=True)
         issue_date = tds[date_col].get_text(strip=True)
         status = tds[status_col].get_text(strip=True)
+        description = tds[desc_col].get_text(strip=True) if (desc_col is not None and len(tds) > desc_col) else ""
 
         parsed_records.append({
             "permit_number": raw_permit_num,
@@ -74,6 +77,7 @@ def parse_accela_html_table(html: str, config: CityConfig) -> List[Dict[str, Any
             "address": address,
             "issue_date": issue_date,
             "status": status,
+            "description": description,
             "jurisdiction": config.jurisdiction,
             "state": config.state,
         })
@@ -160,16 +164,27 @@ class UniversalAccelaScraper:
                 # 2. Fill Search Form
                 if cfg.search_form:
                     if cfg.search_form.date_start_selector:
-                        await page.fill(cfg.search_form.date_start_selector, start_date)
+                        start_el = await page.query_selector(cfg.search_form.date_start_selector)
+                        if start_el:
+                            await start_el.fill(start_date)
                     if cfg.search_form.date_end_selector:
-                        await page.fill(cfg.search_form.date_end_selector, end_date)
+                        end_el = await page.query_selector(cfg.search_form.date_end_selector)
+                        if end_el:
+                            await end_el.fill(end_date)
                     if cfg.search_form.keyword_selector:
-                        await page.fill(cfg.search_form.keyword_selector, "Roof")
+                        kw_el = await page.query_selector(cfg.search_form.keyword_selector)
+                        if kw_el:
+                            await kw_el.fill("Roof")
 
                     # Submit form
-                    await page.click(cfg.search_form.search_button)
-                    await page.wait_for_load_state("networkidle", timeout=30000)
-                    await asyncio.sleep(delay_sec)
+                    search_btn = await page.query_selector(cfg.search_form.search_button)
+                    if search_btn:
+                        await search_btn.click()
+                        try:
+                            await page.wait_for_load_state("networkidle", timeout=15000)
+                        except Exception:
+                            await asyncio.sleep(delay_sec)
+                        await asyncio.sleep(delay_sec)
 
                 # 3. Pagination & Extraction Loop
                 pages_visited = 0

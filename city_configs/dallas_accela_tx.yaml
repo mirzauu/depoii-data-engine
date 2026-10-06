@@ -1,0 +1,46 @@
+# Dallas, TX - Accela Citizen Access (DallasNow) Portal Scraper Configuration
+jurisdiction: "Dallas, TX"
+state: "TX"
+county: "Dallas County"
+platform: "accela"
+accela_version: "v21"
+
+portal:
+  base_url: "https://aca-prod.accela.com/DALLASTX"
+  search_path: "/Cap/CapHome.aspx?module=Building"
+  module: "Building"
+  sub_type: "Commercial"
+
+disclaimer:
+  has_disclaimer: false
+
+search_form:
+  date_start_selector: "input[id*='txtGSStartDate']"
+  date_end_selector: "input[id*='txtGSEndDate']"
+  keyword_selector: "input[id*='txtGSProjectName']"
+  search_button: "a[id*='btnNewSearch']"
+  date_format: "MM/DD/YYYY"
+
+results:
+  table_selector: "table[id*='gdvPermitList']"
+  pagination_style: "link_next"
+  next_page_selector: "a[id*='ctl00_next']"
+  max_pages: 5
+
+columns:
+  issue_date: 1
+  permit_number: 2
+  record_type: 3
+  address: 4
+  description: 5
+  status: 6
+
+anti_bot:
+  has_captcha: false
+  has_cloudflare: false
+  request_delay_ms: 2500
+  max_retries: 3
+
+rate_limit:
+  requests_per_minute: 8
+  concurrent_sessions: 1

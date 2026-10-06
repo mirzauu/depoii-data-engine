@@ -93,3 +93,45 @@ class NOAAClient:
         ]
 
         return GeoJSONFeatureCollection(features=features)
+
+    async def fetch_live_active_alerts(self, state: str = "TX") -> List[Dict[str, Any]]:
+        """
+        Fetches live real-time active severe weather alerts directly from the
+        National Weather Service / NOAA API (api.weather.gov).
+        """
+        import httpx
+        url = f"https://api.weather.gov/alerts/active?area={state.upper()[:2]}"
+        headers = {
+            "User-Agent": "DepoiiCommercialRoofing/2.0 (+https://depoii.com; ops@depoii.com)",
+            "Accept": "application/geo+json, application/json",
+        }
+        try:
+            async with httpx.AsyncClient(timeout=10.0) as client:
+                res = await client.get(url, headers=headers)
+                if res.status_code == 200:
+                    data = res.json()
+                    features = data.get("features", [])
+                    parsed_alerts = []
+                    for f in features:
+                        props = f.get("properties", {})
+                        geom = f.get("geometry")
+                        parsed_alerts.append({
+                            "id": props.get("id"),
+                            "event": props.get("event"),
+                            "severity": props.get("severity"),
+                            "urgency": props.get("urgency"),
+                            "headline": props.get("headline"),
+                            "areaDesc": props.get("areaDesc"),
+                            "effective": props.get("effective"),
+                            "expires": props.get("expires"),
+                            "geometry": geom,
+                            "source": "NOAA / NWS Live",
+                        })
+                    logger.info(f"[NOAA] Fetched {len(parsed_alerts)} live active alerts for {state}")
+                    return parsed_alerts
+                else:
+                    logger.warning(f"[NOAA] Live alerts API returned status {res.status_code}")
+                    return []
+        except Exception as e:
+            logger.error(f"[NOAA] Error fetching live active alerts for {state}: {e}")
+            return []

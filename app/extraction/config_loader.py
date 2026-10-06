@@ -49,6 +49,7 @@ class ColumnMappingConfig(BaseModel):
     address: int = 3
     issue_date: int = 4
     status: int = 5
+    description: Optional[int] = None
 
 
 class AntiBotConfig(BaseModel):
