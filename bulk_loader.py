@@ -49,6 +49,46 @@ METRO_CONFIGS = [
         "description_field": "description",
         "roof_filter": False,
     },
+    {
+        "city_key": "new_york_ny",
+        "jurisdiction": "New York City, NY",
+        "state": "NY",
+        "url": "https://data.cityofnewyork.us/resource/rbx6-tga4.json",
+        "description_field": "job_description",
+        "roof_filter": False,
+    },
+    {
+        "city_key": "montgomery_md",
+        "jurisdiction": "Montgomery County, MD",
+        "state": "MD",
+        "url": "https://data.montgomerycountymd.gov/resource/i26v-w6bd.json",
+        "description_field": "description",
+        "roof_filter": False,
+    },
+    {
+        "city_key": "sonoma_ca",
+        "jurisdiction": "Sonoma County, CA",
+        "state": "CA",
+        "url": "https://data.sonomacounty.ca.gov/resource/88ms-k5e7.json",
+        "description_field": "description",
+        "roof_filter": False,
+    },
+    {
+        "city_key": "framingham_ma",
+        "jurisdiction": "Framingham, MA",
+        "state": "MA",
+        "url": "https://data.framinghamma.gov/resource/2vzw-yean.json",
+        "description_field": "description",
+        "roof_filter": False,
+    },
+    {
+        "city_key": "gainesville_fl",
+        "jurisdiction": "Gainesville, FL",
+        "state": "FL",
+        "url": "https://data.cityofgainesville.org/resource/p798-x3nx.json",
+        "description_field": "job_description",
+        "roof_filter": False,
+    },
 ]
 
 async def harvest_metro(client: httpx.AsyncClient, metro: dict) -> List[Dict[str, Any]]:
@@ -92,13 +132,38 @@ async def run_bulk_ingest():
             
             total_raw += len(raw_records)
             
-            # Map Cambridge-specific fields if needed
+            # Map metro-specific fields for maximum normalization accuracy
             if metro["city_key"] == "cambridge_ma":
                 for r in raw_records:
                     r["contractor_name"] = r.get("firm_name") or r.get("applicant_name")
                     r["estimated_cost"] = r.get("building_cost")
                     r["street_address"] = r.get("full_address")
                     r["work_description"] = r.get("proposed_work_description") or r.get("roof_work_description")
+            elif metro["city_key"] == "new_york_ny":
+                for r in raw_records:
+                    r["permit_number"] = r.get("job_filing_number") or r.get("bin")
+                    r["contractor_name"] = r.get("applicant_business_name") or r.get("general_contractor_business_name")
+                    r["estimated_cost"] = r.get("estimated_job_costs") or r.get("initial_cost")
+                    r["street_address"] = f"{r.get('house_no', '')} {r.get('street_name', '')}".strip()
+                    r["work_description"] = r.get("job_description") or r.get("work_type")
+            elif metro["city_key"] == "montgomery_md":
+                for r in raw_records:
+                    r["permit_number"] = r.get("permitno")
+                    r["street_address"] = f"{r.get('stno', '')} {r.get('stname', '')} {r.get('suffix', '')}".strip()
+                    r["estimated_cost"] = r.get("declaredvaluation")
+                    r["work_description"] = r.get("description")
+            elif metro["city_key"] == "sonoma_ca":
+                for r in raw_records:
+                    r["permit_number"] = r.get("file_number")
+                    r["street_address"] = r.get("address")
+                    r["estimated_cost"] = r.get("value")
+                    r["work_description"] = r.get("description")
+            elif metro["city_key"] == "framingham_ma":
+                for r in raw_records:
+                    r["permit_number"] = r.get("permit")
+                    r["street_address"] = f"{r.get('street_number', '')} {r.get('street_name', '')}".strip()
+                    r["estimated_cost"] = r.get("estimated_job_cost")
+                    r["work_description"] = r.get("description")
             
             # Normalize
             batch_res = batch_normalize_permits(

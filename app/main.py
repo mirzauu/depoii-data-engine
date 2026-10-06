@@ -96,3 +96,5 @@ async def prometheus_metrics():
     data, content_type = get_metrics_data()
     return Response(content=data, media_type=content_type)
 
+
+# reload
