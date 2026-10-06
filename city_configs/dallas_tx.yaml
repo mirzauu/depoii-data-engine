@@ -1,0 +1,19 @@
+# Dallas, TX - Socrata Open Data + Accela Backup Configuration
+jurisdiction: "Dallas, TX"
+state: "TX"
+county: "Dallas County"
+platform: "socrata"
+
+socrata:
+  domain: "data.dallasopendata.com"
+  dataset_id: "ydr8-5enu"
+  resource_name: "Building Permits"
+  date_field: "issue_date"
+  description_field: "description"
+  valuation_field: "estimated_cost"
+  contractor_field: "contractor_name"
+  address_field: "street_address"
+
+rate_limit:
+  requests_per_minute: 30
+  batch_size: 1000
