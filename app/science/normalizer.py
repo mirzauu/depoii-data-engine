@@ -373,6 +373,94 @@ def normalize_socrata_permit(
     )
 
 
+def normalize_accela_permit(
+    raw: Dict[str, Any],
+    jurisdiction: str = "Fort Worth, TX",
+    state: str = "TX",
+) -> DepoiiNormalizedPermitSchema:
+    """
+    Normalizes a raw record scraped from Accela Citizen Access (ACA).
+    """
+    raw_permit_num = (
+        raw.get("permit_number")
+        or raw.get("permitNumber")
+        or raw.get("record_number")
+        or raw.get("recordNumber")
+        or raw.get("cap_id")
+        or raw.get("capId")
+        or f"ACA-{abs(hash(str(raw))) % 10000000}"
+    )
+    raw_permit_num = str(raw_permit_num).strip()
+
+    raw_date = raw.get("issue_date") or raw.get("issueDate") or raw.get("date")
+    issue_date = clean_iso_date(raw_date)
+
+    raw_address = raw.get("address") or raw.get("location") or "Commercial Corridor"
+    normalized_address = clean_street_address(raw_address)
+    city = raw.get("city") or jurisdiction.split(",")[0].strip()
+    zip_code = extract_zip_code(raw.get("zip") or raw.get("zip_code") or normalized_address)
+
+    raw_contractor = (
+        raw.get("contractor")
+        or raw.get("licensed_professional")
+        or raw.get("licensedProfessional")
+        or raw.get("applicant")
+    )
+    contractor_name, contractor_license = clean_contractor_info(raw_contractor)
+
+    raw_val = raw.get("valuation") or raw.get("job_value") or raw.get("jobValue")
+    valuation = clean_dollar_valuation(raw_val)
+    valuation_formatted = format_dollar_valuation(valuation)
+
+    raw_description = (
+        raw.get("description")
+        or raw.get("record_type")
+        or raw.get("recordType")
+        or "Accela Commercial Permitted Roofing Scope."
+    )
+    raw_description = str(raw_description).strip()
+
+    category = categorize_roof_permit(raw_description, raw.get("record_type") or raw.get("recordType"))
+    probable_roof_system = infer_roof_system(raw_description)
+    square_footage = extract_square_footage(raw_description) or (int(raw["squareFootage"]) if raw.get("squareFootage") else None)
+    status = normalize_permit_status(raw.get("status"))
+
+    clean_num = re.sub(r"[^A-Za-z0-9]", "-", raw_permit_num).upper()
+    state_code = state.upper()[:2]
+    canonical_id = f"DEP-{state_code}-ACA-{clean_num}"
+
+    is_storm_window = issue_date >= "2024-05-28"
+
+    return DepoiiNormalizedPermitSchema(
+        id=canonical_id,
+        source_system="accela",
+        raw_permit_number=raw_permit_num,
+        jurisdiction=jurisdiction,
+        state=state,
+        county=raw.get("county"),
+        issue_date=issue_date,
+        applied_date=clean_iso_date(raw.get("applied_date")) if raw.get("applied_date") else None,
+        status=status,
+        normalized_address=normalized_address,
+        city=city,
+        zip_code=zip_code,
+        parcel_id=raw.get("parcel_id") or raw.get("parcelId"),
+        valuation=valuation,
+        valuation_formatted=valuation_formatted,
+        category=category,
+        raw_description=raw_description,
+        square_footage=square_footage,
+        probable_roof_system=probable_roof_system,
+        contractor_name=contractor_name,
+        contractor_license=contractor_license or raw.get("contractor_license") or raw.get("contractorLicense"),
+        is_hail_storm_window=is_storm_window,
+        associated_storm_event="May 28, 2024 Dallas Severe Hail Core" if is_storm_window else None,
+        is_competitor_capture=True,
+        confidence_score=94,
+        normalized_at=datetime.now(timezone.utc).isoformat(),
+    )
+
+
 def batch_normalize_permits(
     raw_records: List[Dict[str, Any]],
     source: PermitSourceSystem = "socrata",
@@ -381,6 +469,7 @@ def batch_normalize_permits(
 ) -> NormalizationBatchResultSchema:
     """
     Batch processes a list of raw municipal records into canonical permits.
+    Routes to normalize_accela_permit or normalize_socrata_permit based on source.
     """
     records: List[DepoiiNormalizedPermitSchema] = []
     errors: List[BatchNormalizationError] = []
@@ -388,11 +477,14 @@ def batch_normalize_permits(
 
     for idx, raw in enumerate(raw_records):
         try:
-            norm = normalize_socrata_permit(raw, jurisdiction=jurisdiction, state=state)
+            if source == "accela" or (raw.get("recordNumber") and not raw.get("permit_number")):
+                norm = normalize_accela_permit(raw, jurisdiction=jurisdiction, state=state)
+            else:
+                norm = normalize_socrata_permit(raw, jurisdiction=jurisdiction, state=state)
             records.append(norm)
             total_val += norm.valuation
         except Exception as e:
-            raw_id = raw.get("permit_number") or raw.get("permit_num") or raw.get("id")
+            raw_id = raw.get("permit_number") or raw.get("permitNumber") or raw.get("recordNumber") or raw.get("id")
             errors.append(BatchNormalizationError(
                 index=idx,
                 raw_id=str(raw_id) if raw_id else None,
@@ -410,3 +502,4 @@ def batch_normalize_permits(
         errors=errors,
         timestamp=datetime.now(timezone.utc).isoformat(),
     )
+

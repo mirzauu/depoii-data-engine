@@ -1,0 +1,47 @@
+# Oklahoma City, OK - Accela Citizen Access Portal Scraper Configuration
+jurisdiction: "Oklahoma City, OK"
+state: "OK"
+county: "Oklahoma County"
+platform: "accela"
+accela_version: "v21"
+
+portal:
+  base_url: "https://access.okc.gov"
+  search_path: "/Cap/CapHome.aspx"
+  module: "Building"
+  sub_type: "Commercial"
+
+disclaimer:
+  has_disclaimer: true
+  checkbox_selector: "input[type='checkbox'][name*='chkAgree']"
+  continue_button: "input[value*='Continue']"
+
+search_form:
+  date_start_selector: "input[id*='txtStartDate']"
+  date_end_selector: "input[id*='txtEndDate']"
+  keyword_selector: "input[id*='txtDescription']"
+  search_button: "a[id*='btnNewSearch']"
+  date_format: "MM/DD/YYYY"
+
+results:
+  table_selector: "table[id*='gdvPermitList']"
+  pagination_style: "link_next"
+  next_page_selector: "a[id*='ctl00_next']"
+  max_pages: 15
+
+columns:
+  permit_number: 1
+  record_type: 2
+  address: 3
+  issue_date: 4
+  status: 5
+
+anti_bot:
+  has_captcha: false
+  has_cloudflare: false
+  request_delay_ms: 2500
+  max_retries: 3
+
+rate_limit:
+  requests_per_minute: 8
+  concurrent_sessions: 1
