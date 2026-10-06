@@ -11,11 +11,24 @@ from app.core.logging import logger
 router = APIRouter(prefix="/permits", tags=["Permits Engine"])
 
 from app.science.pilot_seed import PILOT_SEEDED_PERMITS
+import os
+import json
 
-# In-memory storage for active permits warehouse (seeded with Pilot baseline)
+# In-memory storage for active permits warehouse (seeded with Pilot baseline + cache if present)
 _PERMIT_WAREHOUSE: Dict[str, DepoiiNormalizedPermitSchema] = {
     p.id: p for p in PILOT_SEEDED_PERMITS
 }
+
+_cache_file = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(__file__)))), "warehouse_cache.json")
+if os.path.exists(_cache_file):
+    try:
+        with open(_cache_file, "r", encoding="utf-8") as _f:
+            _raw_cached = json.load(_f)
+            for _item in _raw_cached:
+                _p = DepoiiNormalizedPermitSchema.model_validate(_item)
+                _PERMIT_WAREHOUSE[_p.id] = _p
+    except Exception as _e:
+        pass
 
 
 class PermitSearchResponse(BaseModel):
