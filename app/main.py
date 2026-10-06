@@ -80,4 +80,19 @@ async def root():
         "environment": settings.ENVIRONMENT,
         "docs": "/docs",
         "health": "/health",
+        "metrics": "/metrics",
     }
+
+
+@app.get("/metrics", tags=["Observability"])
+async def prometheus_metrics():
+    """
+    Exposes real-time Prometheus metrics in standard OpenMetrics format.
+    Scrapable by Prometheus, Datadog, or Grafana Agent.
+    """
+    from fastapi.responses import Response
+    from app.observability.metrics import get_metrics_data
+
+    data, content_type = get_metrics_data()
+    return Response(content=data, media_type=content_type)
+

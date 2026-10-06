@@ -9,6 +9,8 @@ from app.science.normalizer import batch_normalize_permits
 from app.science.deduplicator import deduplicate_permits_in_memory
 from app.schemas.permit_schema import DepoiiNormalizedPermitSchema
 from app.core.logging import logger
+from app.observability.metrics import PERMITS_INGESTED, SCRAPER_DURATION, SCRAPER_FAILURES, SYNC_FRESHNESS_HOURS
+from app.observability.alerting import send_ops_alert
 
 DRIFT_WARNING_THRESHOLD = 0.50  # 50% change triggers drift warning
 
@@ -187,6 +189,13 @@ async def run_permit_sync_task(
             f"[SyncTask] ZERO_ROWS_BLOCKED for {config.jurisdiction}! "
             f"Expected ~{prev_count} records. Refusing to overwrite production data."
         )
+        await send_ops_alert(
+            f"Zero records returned for {config.jurisdiction} (expected ~{prev_count}). Ingestion blocked.",
+            severity="critical",
+            context={"jurisdiction": config.jurisdiction, "expected_baseline": prev_count},
+        )
+        SCRAPER_FAILURES.labels(jurisdiction=config.jurisdiction, error_type="ZERO_ROWS").inc()
+
         return SyncTaskResult(
             jurisdiction=config.jurisdiction,
             source_system=config.platform,
@@ -212,6 +221,11 @@ async def run_permit_sync_task(
                 f"[SyncTask] DRIFT_WARNING for {config.jurisdiction}: "
                 f"Row count changed from {prev_count} to {current_count} ({drift_pct:+.1%})"
             )
+            await send_ops_alert(
+                f"Row count drifted {drift_pct:+.1%} for {config.jurisdiction} (from {prev_count} to {current_count})",
+                severity="warning",
+                context={"jurisdiction": config.jurisdiction, "drift_pct": drift_pct, "current": current_count},
+            )
 
     # 3. Normalization (dispatches based on config.platform)
     batch_res = batch_normalize_permits(
@@ -233,6 +247,11 @@ async def run_permit_sync_task(
         "records_normalized": len(deduped_permits),
         "drift_pct": drift_pct,
     }
+
+    # 6. Prometheus Metrics Recording
+    PERMITS_INGESTED.labels(jurisdiction=config.jurisdiction, source=config.platform).inc(len(deduped_permits))
+    SCRAPER_DURATION.labels(jurisdiction=config.jurisdiction).observe(duration)
+    SYNC_FRESHNESS_HOURS.labels(jurisdiction=config.jurisdiction).set(0.0)
 
     return SyncTaskResult(
         jurisdiction=config.jurisdiction,
