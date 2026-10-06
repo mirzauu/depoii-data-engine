@@ -8,6 +8,7 @@ from starlette.middleware.base import BaseHTTPMiddleware
 from app.config import settings
 from app.core.logging import logger, correlation_id_ctx
 from app.api.v1.health import router as health_router
+from app.api.v1.permits import router as permits_router
 
 
 class CorrelationIdMiddleware(BaseHTTPMiddleware):
@@ -60,6 +61,7 @@ app.add_middleware(
 # Routers
 app.include_router(health_router, prefix="/api/v1")
 app.include_router(health_router)  # Also expose /health at root for Docker/K8s probes
+app.include_router(permits_router, prefix="/api/v1")
 
 
 @app.get("/", tags=["Root"])
