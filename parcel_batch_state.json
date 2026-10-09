@@ -1,0 +1,11 @@
+{
+  "current_offset": 21250,
+  "batch_size": 250,
+  "completed_chunks": 85,
+  "total_scanned": 21250,
+  "total_matched": 12047,
+  "total_parcels_created": 12047,
+  "status": "SLEEPING",
+  "last_batch_time": "2026-10-09T11:42:16.494021+00:00",
+  "next_scheduled_run": "2026-10-09T11:47:16.494040+00:00"
+}

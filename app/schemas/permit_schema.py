@@ -1,36 +1,11 @@
-from pydantic import BaseModel, Field, ConfigDict
-from typing import Optional, List, Literal
+from pydantic import BaseModel, Field, ConfigDict, field_validator
+from typing import Optional, List, Union
 
-PermitSourceSystem = Literal["socrata", "accela", "energov", "cad", "shovels"]
+PermitSourceSystem = str
+PermitRoofCategory = str
+PermitStatus = str
+ProbableRoofSystem = str
 
-PermitRoofCategory = Literal[
-    "Commercial Re-Roof",
-    "Roof Tear-Off & Replace",
-    "Commercial Waterproofing & Coating",
-    "Roof Repair & Alteration",
-    "New Construction Commercial Roofing",
-    "General Commercial Permit",
-]
-
-PermitStatus = Literal[
-    "Issued",
-    "Active",
-    "Finaled",
-    "Under Review",
-    "Expired",
-    "Unknown",
-]
-
-ProbableRoofSystem = Literal[
-    "TPO Single-Ply",
-    "EPDM Membrane",
-    "PVC Single-Ply",
-    "Modified Bitumen / BUR",
-    "Metal Standing Seam",
-    "Elastomeric Restoration / Coating",
-    "Commercial Tile / Shingle",
-    "Unspecified Commercial System",
-]
 
 
 class DepoiiNormalizedPermitSchema(BaseModel):
@@ -71,9 +46,17 @@ class DepoiiNormalizedPermitSchema(BaseModel):
     # Depoii Intelligence
     is_hail_storm_window: bool = Field(False, alias="isHailStormWindow")
     associated_storm_event: Optional[str] = Field(None, alias="associatedStormEvent")
-    is_competitor_capture: bool = Field(False, alias="isCompetitorCapture")
     confidence_score: int = Field(100, alias="confidenceScore")
     normalized_at: str = Field(..., alias="normalizedAt")
+
+    @field_validator("confidence_score", mode="before")
+    @classmethod
+    def parse_confidence_score(cls, v):
+        if v is None:
+            return 100
+        if isinstance(v, float):
+            return int(round(v * 100 if v <= 1.0 else v))
+        return int(v)
 
 
 class BatchNormalizationError(BaseModel):

@@ -1,0 +1,150 @@
+{
+  "created_at": "2026-10-07T10:32:27.807427+00:00",
+  "current_batch_index": 5,
+  "total_batches": 5,
+  "total_locations": 10,
+  "completed_batches": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "completed_locations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "total_permits_inserted": 339,
+  "is_all_completed": true,
+  "runs": [
+    {
+      "batch_number": 1,
+      "batch_title": "Batch 1: West Dallas (75212) & Grand Prairie (75050)",
+      "timestamp": "2026-10-07T10:33:20.890287+00:00",
+      "permits_injected": 75,
+      "locations": [
+        {
+          "location_id": 1,
+          "name": "West Dallas Industrial Corridor",
+          "zip": "75212",
+          "city": "Dallas",
+          "permits_injected": 40,
+          "duration_sec": 24.7
+        },
+        {
+          "location_id": 2,
+          "name": "Great Southwest Industrial District",
+          "zip": "75050",
+          "city": "Grand Prairie",
+          "permits_injected": 35,
+          "duration_sec": 20.52
+        }
+      ]
+    },
+    {
+      "batch_number": 2,
+      "batch_title": "Batch 2: Stemmons Brookhollow (75247) & Carrollton (75006)",
+      "timestamp": "2026-10-07T10:36:04.023282+00:00",
+      "permits_injected": 80,
+      "locations": [
+        {
+          "location_id": 3,
+          "name": "Stemmons Freeway / Brookhollow Logistics",
+          "zip": "75247",
+          "city": "Dallas",
+          "permits_injected": 45,
+          "duration_sec": 23.83
+        },
+        {
+          "location_id": 4,
+          "name": "Carrollton Industrial Corridor",
+          "zip": "75006",
+          "city": "Carrollton",
+          "permits_injected": 35,
+          "duration_sec": 20.93
+        }
+      ]
+    },
+    {
+      "batch_number": 3,
+      "batch_title": "Batch 3: Addison Airport (75001) & Farmers Branch (75234)",
+      "timestamp": "2026-10-07T10:41:56.331442+00:00",
+      "permits_injected": 54,
+      "locations": [
+        {
+          "location_id": 5,
+          "name": "Addison Airport & Commercial Corridor",
+          "zip": "75001",
+          "city": "Addison",
+          "permits_injected": 35,
+          "duration_sec": 34.6
+        },
+        {
+          "location_id": 6,
+          "name": "Farmers Branch Distribution Hub",
+          "zip": "75234",
+          "city": "Farmers Branch",
+          "permits_injected": 19,
+          "duration_sec": 9.86
+        }
+      ]
+    },
+    {
+      "batch_number": 4,
+      "batch_title": "Batch 4: Irving Las Colinas (75062) & Design District (75207)",
+      "timestamp": "2026-10-07T10:45:56.654227+00:00",
+      "permits_injected": 80,
+      "locations": [
+        {
+          "location_id": 7,
+          "name": "Irving / Las Colinas Commercial Corridor",
+          "zip": "75062",
+          "city": "Irving",
+          "permits_injected": 35,
+          "duration_sec": 18.17
+        },
+        {
+          "location_id": 8,
+          "name": "Dallas Design District & Trinity Logistics",
+          "zip": "75207",
+          "city": "Dallas",
+          "permits_injected": 45,
+          "duration_sec": 19.1
+        }
+      ]
+    },
+    {
+      "batch_number": 5,
+      "batch_title": "Batch 5: North Dallas (75244) & Downtown Fort Worth (76102)",
+      "timestamp": "2026-10-07T10:50:43.736798+00:00",
+      "permits_injected": 50,
+      "locations": [
+        {
+          "location_id": 9,
+          "name": "North Dallas / Galleria Commercial Zone",
+          "zip": "75244",
+          "city": "Dallas",
+          "permits_injected": 15,
+          "duration_sec": 9.45
+        },
+        {
+          "location_id": 10,
+          "name": "Downtown Fort Worth Commercial Center",
+          "zip": "76102",
+          "city": "Fort Worth",
+          "permits_injected": 35,
+          "duration_sec": 17.87
+        }
+      ]
+    }
+  ],
+  "updated_at": "2026-10-07T10:50:43.736835+00:00"
+}

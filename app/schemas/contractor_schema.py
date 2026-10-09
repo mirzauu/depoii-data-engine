@@ -16,6 +16,15 @@ class ContractorLeaderboardItem(BaseModel):
     jurisdiction: str
     aliases: List[str] = []
     recent_permit_ids: List[str] = Field(default_factory=list, alias="recentPermitIds")
+    website_url: Optional[str] = Field(None, alias="websiteUrl")
+    logo_url: Optional[str] = Field(None, alias="logoUrl")
+    hq_address: Optional[str] = Field(None, alias="hqAddress")
+    phone_number: Optional[str] = Field(None, alias="phoneNumber")
+    year_founded: Optional[int] = Field(None, alias="yearFounded")
+    crew_capacity_estimate: Optional[str] = Field(None, alias="crewCapacityEstimate")
+    manufacturer_certifications: List[str] = Field(default_factory=list, alias="manufacturerCertifications")
+    leadership: List[dict] = Field(default_factory=list)
+    m_and_a_profile: Optional[dict] = Field(None, alias="mAndAProfile")
 
 
 class ContractorLeaderboardResponse(BaseModel):

@@ -1,0 +1,68 @@
+<div class="row col-sm-offset-1 col-sm-11 col-xs-12">
+<form class="form-horizontal" data-ng-cloak="" id="permitSearchForm" method="get" name="permitSearchForm" novalidate="novalidate" role="form">        <h3>Permit Search</h3>
+        <div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Address</label>
+<div class="col-sm-6"><input aria-label="Address" class="form-control" data-ng-model="vm.model.Address" id="Address" name="Address" set-focus="" type="text"></input></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Permit Number</label>
+<div class="col-sm-6"><input aria-label="Permit Number" class="form-control form-control" data-ng-model="vm.model.PermitNumber" id="PermitNumber" name="PermitNumber" type="text"></input></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.PermitNumber.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Project Name</label>
+<div class="col-sm-6"><input aria-label="Project Name" class="form-control form-control" data-ng-model="vm.model.ProjectName" id="ProjectName" name="ProjectName" type="text"></input></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.ProjectName.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Permit Type</label>
+<div class="col-sm-6"><select aria-label="Permit Type" class="form-control" id="PMPermitTypeId" name="PMPermitTypeId" ng-model="vm.selectedType" ng-options="item as item.PermitTypeName for item in vm.secondaryData.PermitTypes"></select></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.PMPermitTypeId.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Work Class</label>
+<div class="col-sm-6"><select aria-label="Work Class" class="form-control" data-ng-model="PMPermitWorkClassId" id="PMPermitWorkClassId" name="PMPermitWorkClassId" ng-options="item.PermitWorkclassId as item.WorkclassName for item in vm.selectedType.WorkClassTemplates"></select></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.PMPermitWorkClassId.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Status</label>
+<div class="col-sm-6"><select aria-label="Status" class="form-control" data-ng-model="vm.model.PMPermitStatusId" id="PMPermitStatusId" name="PMPermitStatusId" ng-options="item.PermitStatusId as item.Name for item in vm.secondaryData.PermitStatuses"></select></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.PMPermitStatusId.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Issued Date Start</label>
+<div class="col-sm-6"><div class="input-group"><input aria-label="Issued Date Start" class="form-control form-control" data-datepicker-popup="MM/dd/yyyy" data-min="1/1/1753" data-ng-model="vm.model.StartIssueDate" data-show-weeks="false" id="StartIssueDate" is-open="vm.openedDatePopupStartIssueDate" name="StartIssueDate" type="text"></input>
+<span aria-label="Select Issued Date Start" class="input-group-btn" tabindex="0"><button class="btn btn-default" ng-click="$event.preventDefault();  $event.stopPropagation(); vm.openedDatePopupStartIssueDate = !(vm.openedDatePopupStartIssueDate || false);" tabindex="-1"><i class="fa fa-calendar"></i></button></span></div></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.StartIssueDate.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Issued Date End</label>
+<div class="col-sm-6"><div class="input-group"><input aria-label="Issued Date End" class="form-control form-control" data-datepicker-popup="MM/dd/yyyy" data-min="1/1/1753" data-ng-model="vm.model.EndIssueDate" data-show-weeks="false" id="EndIssueDate" is-open="vm.openedDatePopupEndIssueDate" name="EndIssueDate" type="text"></input>
+<span aria-label="Select Issued Date End" class="input-group-btn" tabindex="0"><button class="btn btn-default" ng-click="$event.preventDefault();  $event.stopPropagation(); vm.openedDatePopupEndIssueDate = !(vm.openedDatePopupEndIssueDate || false);" tabindex="-1"><i class="fa fa-calendar"></i></button></span></div></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.EndIssueDate.$error"></div>
+</div>
+
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Expiration Date Start</label>
+<div class="col-sm-6"><div class="input-group"><input aria-label="Expiration Date Start" class="form-control form-control" data-datepicker-popup="MM/dd/yyyy" data-min="1/1/1753" data-ng-model="vm.model.StartExpirationDate" data-show-weeks="false" id="StartExpirationDate" is-open="vm.openedDatePopupStartExpirationDate" name="StartExpirationDate" type="text"></input>
+<span aria-label="Select Expiration Date Start" class="input-group-btn" tabindex="0"><button class="btn btn-default" ng-click="$event.preventDefault();  $event.stopPropagation(); vm.openedDatePopupStartExpirationDate = !(vm.openedDatePopupStartExpirationDate || false);" tabindex="-1"><i class="fa fa-calendar"></i></button></span></div></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.StartExpirationDate.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Expiration Date End</label>
+<div class="col-sm-6"><div class="input-group"><input aria-label="Expiration Date End" class="form-control form-control" data-datepicker-popup="MM/dd/yyyy" data-min="1/1/1753" data-ng-model="vm.model.EndExpirationDate" data-show-weeks="false" id="EndExpirationDate" is-open="vm.openedDatePopupEndExpirationDate" name="EndExpirationDate" type="text"></input>
+<span aria-label="Select Expiration Date End" class="input-group-btn" tabindex="0"><button class="btn btn-default" ng-click="$event.preventDefault();  $event.stopPropagation(); vm.openedDatePopupEndExpirationDate = !(vm.openedDatePopupEndExpirationDate || false);" tabindex="-1"><i class="fa fa-calendar"></i></button></span></div></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.EndExpirationDate.$error"></div>
+</div>
+
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Finaled Date Start</label>
+<div class="col-sm-6"><div class="input-group"><input aria-label="Finaled Date Start" class="form-control form-control" data-datepicker-popup="MM/dd/yyyy" data-min="1/1/1753" data-ng-model="vm.model.StartFinaledDate" data-show-weeks="false" id="StartFinaledDate" is-open="vm.openedDatePopupStartFinaledDate" name="StartFinaledDate" type="text"></input>
+<span aria-label="Select Finaled Date Start" class="input-group-btn" tabindex="0"><button class="btn btn-default" ng-click="$event.preventDefault();  $event.stopPropagation(); vm.openedDatePopupStartFinaledDate = !(vm.openedDatePopupStartFinaledDate || false);" tabindex="-1"><i class="fa fa-calendar"></i></button></span></div></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.StartFinaledDate.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Finaled Date End</label>
+<div class="col-sm-6"><div class="input-group"><input aria-label="Finaled Date End" class="form-control form-control" data-datepicker-popup="MM/dd/yyyy" data-min="1/1/1753" data-ng-model="vm.model.EndFinaledDate" data-show-weeks="false" id="EndFinaledDate" is-open="vm.openedDatePopupEndFinaledDate" name="EndFinaledDate" type="text"></input>
+<span aria-label="Select Finaled Date End" class="input-group-btn" tabindex="0"><button class="btn btn-default" ng-click="$event.preventDefault();  $event.stopPropagation(); vm.openedDatePopupEndFinaledDate = !(vm.openedDatePopupEndFinaledDate || false);" tabindex="-1"><i class="fa fa-calendar"></i></button></span></div></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.EndFinaledDate.$error"></div>
+</div>
+            <div class="form-group"><label class="control-label col-sm-offset-1 col-sm-3">Search My Permits Only</label>
+<div class="col-sm-offset-4 col-sm-6"><div class="checkbox"><label><input aria-label="Search My Permits Only" data-ng-model="vm.model.SearchMyPermitsOnly" id="SearchMyPermitsOnly" name="SearchMyPermitsOnly" type="checkbox"></input></label></div></div>
+<div class="text-danger col-sm-offset-4 col-sm-6" ng-messages="permitSearchForm.SearchMyPermitsOnly.$error"></div>
+</div>
+        </div>
+        <div class="row col-sm-offset-4 col-sm-6">
+            <button type="button" class="btn btn-primary" ng-click="vm.clear()">Clear</button>
+            <button type="submit" class="btn btn-primary" data-form-submit="permitSearchForm" data-form-submit-function="vm.search()">Search</button>
+        </div>        
+</form>    </div>

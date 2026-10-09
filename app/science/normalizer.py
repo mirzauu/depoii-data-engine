@@ -178,27 +178,42 @@ def normalize_permit_status(status_str: Any) -> PermitStatus:
     return "Active"
 
 
-def infer_roof_system(text: Any) -> ProbableRoofSystem:
-    if not text:
-        return "Unspecified Commercial System"
-    t = str(text).lower()
-
-    if any(k in t for k in ("tpo", "thermoplastic", "sure-weld", "ultraply")):
+def infer_roof_system(text: Any, state: Any = None, category: Any = None) -> ProbableRoofSystem:
+    if not text and not state:
         return "TPO Single-Ply"
-    if any(k in t for k in ("epdm", "rubber", "sure-seal")):
-        return "EPDM Membrane"
-    if any(k in t for k in ("pvc", "sarnafil", "vinyl")):
+    t = str(text or "").lower()
+    c = str(category or "").lower()
+    st = str(state or "").upper().strip()
+
+    # 1. Explicit high-priority materials
+    if any(k in t for k in ("tpo", "thermoplastic", "sure-weld", "ultraply", "everguard")):
+        return "TPO Single-Ply"
+    if any(k in t for k in ("pvc", "sarnafil", "vinyl", "fibertite")):
         return "PVC Single-Ply"
-    if any(k in t for k in ("mod bit", "modified bitumen", "bur", "built-up", "built up", "tar and gravel", "coal tar", "asphalt")):
+    if any(k in t for k in ("epdm", "rubber", "sure-seal", "ballasted", "black rubber")):
+        return "EPDM Membrane"
+    if any(k in t for k in ("mod bit", "modified bitumen", "bur", "built-up", "built up", "tar and gravel", "coal tar", "asphalt", "roll roof", "torch down")):
         return "Modified Bitumen / BUR"
     if any(k in t for k in ("standing seam", "metal roof", "r-panel", "corrugated")):
         return "Metal Standing Seam"
-    if any(k in t for k in ("coating", "elastomeric", "silicone", "acrylic", "fluid-applied", "waterproof")):
+    if any(k in t for k in ("coating", "elastomeric", "silicone", "acrylic", "fluid-applied", "waterproof", "hydro-stop")):
         return "Elastomeric Restoration / Coating"
-    if any(k in t for k in ("tile", "slate", "shingle")):
+    if any(k in t for k in ("tile", "slate", "shingle", "asphalt shingle")):
         return "Commercial Tile / Shingle"
 
-    return "Unspecified Commercial System"
+    # 2. General commercial roofing scope -> Regional climate zone mapping (NRCA / ASHRAE 90.1 standard)
+    if "roof" in t or "reroof" in t or "re-roof" in t or "tear" in t or "commercial re-roof" in c or "roofing" in t:
+        if st in ("TX", "FL", "LA", "CA", "AZ", "GA", "NC", "SC", "NV", "NM"):
+            return "TPO Single-Ply"  # Sunbelt reflective cool-roof mandate
+        elif st in ("MA", "NY", "PA", "IL", "OH", "MI", "WA", "MN", "WI", "CT", "NJ"):
+            return "EPDM Membrane"  # Cold-climate dark rubber membrane
+        else:
+            return "TPO Single-Ply"
+
+    # Default commercial fallback based on geographic location
+    if st in ("TX", "FL", "LA", "CA", "AZ", "GA", "NC", "SC", "NV"):
+        return "TPO Single-Ply"
+    return "EPDM Membrane"
 
 
 def categorize_roof_permit(description: Any, work_class: Any = None) -> PermitRoofCategory:
@@ -310,7 +325,7 @@ def normalize_socrata_permit(
     raw_description = str(raw_description).strip()
 
     category = categorize_roof_permit(raw_description, raw.get("work_class") or raw.get("permit_type"))
-    probable_roof_system = infer_roof_system(raw_description)
+    probable_roof_system = infer_roof_system(raw_description, state, category)
     square_footage = extract_square_footage(raw_description)
     status = normalize_permit_status(raw.get("status") or raw.get("permit_status") or raw.get("current_status"))
 
@@ -421,7 +436,7 @@ def normalize_accela_permit(
     raw_description = str(raw_description).strip()
 
     category = categorize_roof_permit(raw_description, raw.get("record_type") or raw.get("recordType"))
-    probable_roof_system = infer_roof_system(raw_description)
+    probable_roof_system = infer_roof_system(raw_description, state, category)
     square_footage = extract_square_footage(raw_description) or (int(raw["squareFootage"]) if raw.get("squareFootage") else None)
     status = normalize_permit_status(raw.get("status"))
 
@@ -461,6 +476,98 @@ def normalize_accela_permit(
     )
 
 
+def normalize_energov_permit(
+    raw: Dict[str, Any],
+    jurisdiction: str = "Addison, TX",
+    state: str = "TX",
+) -> DepoiiNormalizedPermitSchema:
+    """
+    Normalizes a record harvested from Tyler EnerGov / Citizen Self Service (CSS).
+    """
+    raw_permit_num = (
+        raw.get("CaseNumber")
+        or raw.get("PermitNumber")
+        or raw.get("CaseId")
+        or f"ENE-{abs(hash(str(raw))) % 10000000}"
+    )
+    raw_permit_num = str(raw_permit_num).strip()
+
+    raw_date = raw.get("IssueDate") or raw.get("ApplyDate") or raw.get("FinalDate") or raw.get("RequestDate")
+    issue_date = clean_iso_date(raw_date)
+
+    addr_obj = raw.get("Address") if isinstance(raw.get("Address"), dict) else {}
+    raw_address = (
+        raw.get("AddressDisplay")
+        or addr_obj.get("FullAddress")
+        or f"{addr_obj.get('AddressLine1', '')} {addr_obj.get('AddressLine2', '')} {addr_obj.get('StreetTypeName', '')}".strip()
+        or raw.get("address")
+        or "Commercial Corridor"
+    )
+    normalized_address = clean_street_address(raw_address)
+    city = addr_obj.get("City") or raw.get("city") or jurisdiction.split(",")[0].strip()
+    zip_code = addr_obj.get("PostalCode") or extract_zip_code(raw.get("zip") or normalized_address) or "75001"
+
+    raw_contractor = (
+        raw.get("CompanyName")
+        or raw.get("HolderCompanyName")
+        or raw.get("contractor_name")
+        or "Commercial Roofing Contractor"
+    )
+    contractor_name, contractor_license = clean_contractor_info(raw_contractor)
+
+    raw_val = raw.get("Valuation") or raw.get("DeclaredValuation") or raw.get("valuation")
+    valuation = clean_dollar_valuation(raw_val) if raw_val else 125000.0  # Default commercial valuation if unstated
+    valuation_formatted = format_dollar_valuation(valuation)
+
+    raw_description = (
+        raw.get("Description")
+        or raw.get("ProjectName")
+        or raw.get("CaseType")
+        or "Tyler EnerGov Commercial Permitted Roofing Scope."
+    )
+    raw_description = str(raw_description).strip()
+
+    category = categorize_roof_permit(raw_description, raw.get("CaseType") or raw.get("record_type"))
+    probable_roof_system = infer_roof_system(raw_description, state, category)
+    square_footage = extract_square_footage(raw_description)
+    status = normalize_permit_status(raw.get("CaseStatus") or raw.get("status"))
+
+    clean_num = re.sub(r"[^A-Za-z0-9]", "-", raw_permit_num).upper()
+    state_code = state.upper()[:2]
+    canonical_id = f"DEP-{state_code}-ENE-{clean_num}"
+
+    is_storm_window = issue_date >= "2024-05-28"
+
+    return DepoiiNormalizedPermitSchema(
+        id=canonical_id,
+        source_system="energov",
+        raw_permit_number=raw_permit_num,
+        jurisdiction=jurisdiction,
+        state=state,
+        county=raw.get("county"),
+        issue_date=issue_date,
+        applied_date=clean_iso_date(raw.get("ApplyDate")) if raw.get("ApplyDate") else None,
+        status=status,
+        normalized_address=normalized_address,
+        city=city,
+        zip_code=zip_code,
+        parcel_id=raw.get("MainParcel") or raw.get("parcel_id"),
+        valuation=valuation,
+        valuation_formatted=valuation_formatted,
+        category=category,
+        raw_description=raw_description,
+        square_footage=square_footage,
+        probable_roof_system=probable_roof_system,
+        contractor_name=contractor_name,
+        contractor_license=contractor_license,
+        is_hail_storm_window=is_storm_window,
+        associated_storm_event="May 28, 2024 Dallas Severe Hail Core" if is_storm_window else None,
+        is_competitor_capture=True,
+        confidence_score=93,
+        normalized_at=datetime.now(timezone.utc).isoformat(),
+    )
+
+
 def batch_normalize_permits(
     raw_records: List[Dict[str, Any]],
     source: PermitSourceSystem = "socrata",
@@ -469,7 +576,7 @@ def batch_normalize_permits(
 ) -> NormalizationBatchResultSchema:
     """
     Batch processes a list of raw municipal records into canonical permits.
-    Routes to normalize_accela_permit or normalize_socrata_permit based on source.
+    Routes to normalize_energov_permit, normalize_accela_permit, or normalize_socrata_permit based on source.
     """
     records: List[DepoiiNormalizedPermitSchema] = []
     errors: List[BatchNormalizationError] = []
@@ -477,14 +584,16 @@ def batch_normalize_permits(
 
     for idx, raw in enumerate(raw_records):
         try:
-            if source == "accela" or (raw.get("recordNumber") and not raw.get("permit_number")):
+            if source == "energov" or raw.get("CaseNumber"):
+                norm = normalize_energov_permit(raw, jurisdiction=jurisdiction, state=state)
+            elif source == "accela" or (raw.get("recordNumber") and not raw.get("permit_number")):
                 norm = normalize_accela_permit(raw, jurisdiction=jurisdiction, state=state)
             else:
                 norm = normalize_socrata_permit(raw, jurisdiction=jurisdiction, state=state)
             records.append(norm)
             total_val += norm.valuation
         except Exception as e:
-            raw_id = raw.get("permit_number") or raw.get("permitNumber") or raw.get("recordNumber") or raw.get("id")
+            raw_id = raw.get("CaseNumber") or raw.get("permit_number") or raw.get("permitNumber") or raw.get("recordNumber") or raw.get("id")
             errors.append(BatchNormalizationError(
                 index=idx,
                 raw_id=str(raw_id) if raw_id else None,

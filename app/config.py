@@ -25,6 +25,8 @@ class Settings(BaseSettings):
     # Database URLs
     DATABASE_URL: str = "sqlite+aiosqlite:///./depoii_local.db"
     SYNC_DATABASE_URL: str = "sqlite:///./depoii_local.db"
+    LOCAL_DATABASE_URL: str = "sqlite:///./depoii_local.db"
+    USE_LOCAL_DB: bool = True
 
     # Redis & Celery
     REDIS_URL: str = "redis://localhost:6379/0"

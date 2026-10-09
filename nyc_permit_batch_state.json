@@ -1,0 +1,12 @@
+{
+  "current_offset": 70069,
+  "total_fetched": 70069,
+  "total_inserted": 70065,
+  "total_duplicates_skipped": 0,
+  "last_batch_timestamp": "2026-10-08T11:08:59.772762+00:00",
+  "status": "COMPLETED",
+  "scope": "roofing",
+  "consecutive_empty": 3,
+  "total_target_records": 70069,
+  "batch_size": 1000
+}

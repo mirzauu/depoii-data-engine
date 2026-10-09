@@ -1,0 +1,160 @@
+{
+  "created_at": "2026-10-07T09:49:22.720661+00:00",
+  "current_batch_index": 5,
+  "total_batches": 5,
+  "total_locations": 10,
+  "completed_batches": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "completed_locations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "total_parcels_inserted": 338,
+  "is_all_completed": true,
+  "runs": [
+    {
+      "batch_number": 1,
+      "batch_title": "Batch 1: West Dallas (75212) & Grand Prairie (75050)",
+      "timestamp": "2026-10-07T09:49:48.295161+00:00",
+      "parcels_injected": 70,
+      "locations": [
+        {
+          "location_id": 1,
+          "name": "West Dallas Industrial Corridor",
+          "zip": "75212",
+          "city": "Dallas",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 11.67
+        },
+        {
+          "location_id": 2,
+          "name": "Great Southwest Industrial District",
+          "zip": "75050",
+          "city": "Grand Prairie",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 11.82
+        }
+      ]
+    },
+    {
+      "batch_number": 2,
+      "batch_title": "Batch 2: Stemmons Brookhollow (75247) & Carrollton (75006)",
+      "timestamp": "2026-10-07T09:55:33.827026+00:00",
+      "parcels_injected": 70,
+      "locations": [
+        {
+          "location_id": 3,
+          "name": "Stemmons Freeway / Brookhollow Logistics",
+          "zip": "75247",
+          "city": "Dallas",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 11.64
+        },
+        {
+          "location_id": 4,
+          "name": "Carrollton Industrial Corridor",
+          "zip": "75006",
+          "city": "Carrollton",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 11.34
+        }
+      ]
+    },
+    {
+      "batch_number": 3,
+      "batch_title": "Batch 3: Addison Airport (75001) & Farmers Branch (75234)",
+      "timestamp": "2026-10-07T10:00:33.536064+00:00",
+      "parcels_injected": 70,
+      "locations": [
+        {
+          "location_id": 5,
+          "name": "Addison Airport & Commercial Corridor",
+          "zip": "75001",
+          "city": "Addison",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 11.97
+        },
+        {
+          "location_id": 6,
+          "name": "Farmers Branch Distribution Hub",
+          "zip": "75234",
+          "city": "Farmers Branch",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 10.9
+        }
+      ]
+    },
+    {
+      "batch_number": 4,
+      "batch_title": "Batch 4: Irving Las Colinas (75062) & Design District (75207)",
+      "timestamp": "2026-10-07T10:05:33.421603+00:00",
+      "parcels_injected": 70,
+      "locations": [
+        {
+          "location_id": 7,
+          "name": "Irving / Las Colinas Commercial Corridor",
+          "zip": "75062",
+          "city": "Irving",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 12.55
+        },
+        {
+          "location_id": 8,
+          "name": "Dallas Design District & Trinity Logistics",
+          "zip": "75207",
+          "city": "Dallas",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 11.86
+        }
+      ]
+    },
+    {
+      "batch_number": 5,
+      "batch_title": "Batch 5: North Dallas (75244) & Downtown Fort Worth (76102)",
+      "timestamp": "2026-10-07T10:10:34.135179+00:00",
+      "parcels_injected": 58,
+      "locations": [
+        {
+          "location_id": 9,
+          "name": "North Dallas / Galleria Commercial Zone",
+          "zip": "75244",
+          "city": "Dallas",
+          "cad_source": "Dallas CAD",
+          "parcels_injected": 35,
+          "duration_sec": 14.56
+        },
+        {
+          "location_id": 10,
+          "name": "Downtown Fort Worth Commercial Center",
+          "zip": "76102",
+          "city": "Fort Worth",
+          "cad_source": "Tarrant CAD",
+          "parcels_injected": 23,
+          "duration_sec": 11.08
+        }
+      ]
+    }
+  ],
+  "updated_at": "2026-10-07T10:10:34.135205+00:00"
+}

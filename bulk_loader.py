@@ -91,6 +91,82 @@ METRO_CONFIGS = [
     },
 ]
 
+TIER3_ENERGOV_CONFIGS = [
+    {
+        "city_key": "addison_tx",
+        "jurisdiction": "Addison, TX",
+        "state": "TX",
+        "base_url": "https://egov.addisontx.gov/energov_prod/selfservice",
+        "tenant_id": "1",
+        "tenant_name": "EnerGovProd",
+        "tenant_url": "EnerGovProd",
+        "culture": "en-US",
+        "keywords": ["roof", "re-roof", "commercial", "tpo"],
+    }
+]
+
+async def harvest_energov_metro(client: httpx.AsyncClient, config: dict) -> List[Dict[str, Any]]:
+    """
+    Harvests commercial roofing permits from a Tier 3 Tyler EnerGov / CSS municipality.
+    """
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Content-Type": "application/json;charset=UTF-8",
+        "tenantId": config["tenant_id"],
+        "tenantName": config["tenant_name"],
+        "Tyler-TenantUrl": config["tenant_url"],
+        "Tyler-Tenant-Culture": config["culture"],
+        "Referer": config["base_url"],
+    }
+    
+    # 1. Fetch base criteria template
+    crit_url = f"{config['base_url']}/api/energov/search/criteria"
+    try:
+        crit_res = await client.get(crit_url, headers=headers, timeout=20.0)
+        base_template = crit_res.json().get("Result", {}) if crit_res.status_code == 200 else {}
+    except Exception as e:
+        print(f"[{config['jurisdiction']}] Failed to fetch criteria template: {e}")
+        base_template = {}
+
+    search_url = f"{config['base_url']}/api/energov/search/search"
+    all_records = []
+    seen_ids = set()
+
+    for kw in config.get("keywords", ["roof"]):
+        for page in range(1, 6):
+            payload = base_template.copy() if base_template else {}
+            payload["Keyword"] = kw
+            payload["ExactMatch"] = False
+            payload["SearchModule"] = 1
+            payload["FilterModule"] = 1
+            payload["SearchMainAddress"] = False
+            payload["PageNumber"] = page
+            payload["PageSize"] = 50
+            payload["SortAscending"] = True
+
+            try:
+                res = await client.post(search_url, json=payload, headers=headers, timeout=25.0)
+                if res.status_code != 200:
+                    break
+                data = res.json()
+                results = data.get("Result", {}).get("EntityResults", [])
+                if not results:
+                    break
+                for item in results:
+                    cid = item.get("CaseId") or item.get("CaseNumber")
+                    if cid and cid not in seen_ids:
+                        seen_ids.add(cid)
+                        all_records.append(item)
+                if len(results) < 50:
+                    break
+            except Exception as e:
+                print(f"[{config['jurisdiction']}] EnerGov error for kw '{kw}' page {page}: {e}")
+                break
+
+    print(f"[{config['jurisdiction']}] Harvested {len(all_records)} unique Tyler EnerGov permit cases")
+    return all_records
+
 async def harvest_metro(client: httpx.AsyncClient, metro: dict) -> List[Dict[str, Any]]:
     headers = {"User-Agent": "DepoiiDataEngine/2.0 (+https://depoii.com)"}
     try:
@@ -124,7 +200,8 @@ async def run_bulk_ingest():
     total_normalized = 0
     total_duplicates_removed = 0
     
-    async with httpx.AsyncClient(timeout=20.0) as client:
+    async with httpx.AsyncClient(timeout=25.0) as client:
+        # 1. Harvest Tier 1 Socrata Open Data Metros
         for metro in METRO_CONFIGS:
             raw_records = await harvest_metro(client, metro)
             if not raw_records:
@@ -183,6 +260,33 @@ async def run_bulk_ingest():
                 
             total_normalized += len(unique_permits)
             print(f"[{metro['jurisdiction']}] Ingested {len(unique_permits)} permits into warehouse")
+
+        # 2. Harvest Tier 3 Tyler EnerGov / CSS Metros
+        for eg_metro in TIER3_ENERGOV_CONFIGS:
+            raw_eg_records = await harvest_energov_metro(client, eg_metro)
+            if not raw_eg_records:
+                continue
+
+            total_raw += len(raw_eg_records)
+
+            # Normalize using EnerGov normalizer
+            batch_res = batch_normalize_permits(
+                raw_records=raw_eg_records,
+                source="energov",
+                jurisdiction=eg_metro["jurisdiction"],
+                state=eg_metro["state"],
+            )
+
+            # Deduplicate
+            unique_permits, dups_removed = deduplicate_permits_in_memory(batch_res.records)
+            total_duplicates_removed += dups_removed
+
+            # Upsert into active warehouse
+            for permit in unique_permits:
+                _PERMIT_WAREHOUSE[permit.id] = permit
+
+            total_normalized += len(unique_permits)
+            print(f"[{eg_metro['jurisdiction']}] Ingested {len(unique_permits)} Tier 3 EnerGov permits into warehouse")
             
     # Persist all permits to warehouse_cache.json so FastAPI loads them on reload
     import json

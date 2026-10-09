@@ -13,6 +13,8 @@ from app.api.v1.storms import router as storms_router
 from app.api.v1.intelligence import router as intelligence_router
 from app.api.v1.contractors import router as contractors_router
 from app.api.v1.jobs import router as jobs_router
+from app.api.v1.parcels import router as parcels_router
+from app.api.v1.locations import router as locations_router
 
 
 class CorrelationIdMiddleware(BaseHTTPMiddleware):
@@ -70,6 +72,8 @@ app.include_router(storms_router, prefix="/api/v1")
 app.include_router(intelligence_router, prefix="/api/v1")
 app.include_router(contractors_router, prefix="/api/v1")
 app.include_router(jobs_router, prefix="/api/v1")
+app.include_router(parcels_router, prefix="/api/v1")
+app.include_router(locations_router, prefix="/api/v1")
 
 
 @app.get("/", tags=["Root"])

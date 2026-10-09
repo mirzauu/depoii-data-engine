@@ -1,0 +1,12 @@
+{
+  "current_offset": 14336,
+  "total_fetched": 14336,
+  "total_inserted": 14336,
+  "total_duplicates_skipped": 0,
+  "last_batch_timestamp": "2026-10-08T15:16:42.629314+00:00",
+  "status": "COMPLETED",
+  "scope": "all",
+  "consecutive_empty": 3,
+  "total_target_records": 14336,
+  "batch_size": 1000
+}

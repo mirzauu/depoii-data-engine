@@ -1,0 +1,12 @@
+{
+  "current_offset": 5869,
+  "current_year": "2024",
+  "batch_size": 500,
+  "completed_chunks": 28,
+  "total_harvested": 12995,
+  "total_inserted": 12995,
+  "total_contractors_enriched": 6916,
+  "status": "COMPLETED",
+  "last_batch_time": "2026-10-08T20:24:02.035041+00:00",
+  "next_scheduled_run": "2026-10-08T20:29:02.035062+00:00"
+}

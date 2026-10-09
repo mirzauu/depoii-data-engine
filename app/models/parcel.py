@@ -18,9 +18,13 @@ class Parcel(Base, TimestampMixin):
     zip_code: Mapped[str] = mapped_column(String(20), index=True, nullable=False)
 
     building_sqft: Mapped[int] = mapped_column(Integer, index=True, default=0)
+    land_sqft: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     year_built: Mapped[Optional[int]] = mapped_column(Integer, nullable=True)
     property_type: Mapped[str] = mapped_column(String(100), default="Commercial Warehouse")
     owner_name: Mapped[str] = mapped_column(String(255), index=True, nullable=False)
+    data_source: Mapped[str] = mapped_column(String(100), default="TAD")
+    account_number: Mapped[Optional[str]] = mapped_column(String(100), nullable=True)
+    total_valuation: Mapped[Optional[float]] = mapped_column(Float, nullable=True)
 
     latitude: Mapped[float] = mapped_column(Float, nullable=False)
     longitude: Mapped[float] = mapped_column(Float, nullable=False)

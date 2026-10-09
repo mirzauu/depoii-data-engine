@@ -1,0 +1,3968 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Depoii Commercial Roofing Data Engine",
+    "description": "Autonomous Data Science, Normalization & Extraction Engine for Depoii Commercial Roofing Intelligence",
+    "version": "2.0.0"
+  },
+  "paths": {
+    "/api/v1/health": {
+      "get": {
+        "tags": [
+          "Health & Observability"
+        ],
+        "summary": "Get Health Status",
+        "description": "Returns engine health, uptime, database/redis status, and per-jurisdiction\nsync freshness with drift detection.",
+        "operationId": "get_health_status_api_v1_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheckResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "Health & Observability"
+        ],
+        "summary": "Get Health Status",
+        "description": "Returns engine health, uptime, database/redis status, and per-jurisdiction\nsync freshness with drift detection.",
+        "operationId": "get_health_status_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HealthCheckResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/sync/{city_key}": {
+      "post": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "Trigger Permit Sync",
+        "description": "Triggers an on-demand municipal permit sync for the given city key (e.g. 'dallas_tx').\nRequires 'X-Depoii-Key' security header.",
+        "operationId": "trigger_permit_sync_api_v1_permits_sync__city_key__post",
+        "parameters": [
+          {
+            "name": "city_key",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "City Key"
+            }
+          },
+          {
+            "name": "X-Depoii-Key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Secret API key for Depoii internal calls",
+              "title": "X-Depoii-Key"
+            },
+            "description": "Secret API key for Depoii internal calls"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SyncResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/search": {
+      "get": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "Search Permits",
+        "description": "Enterprise Apollo-Style Permit Search Engine.\nQueries all 21,372 normalized commercial roofing permits directly from PostgreSQL\nwith high-performance indexing and multi-dimensional filter facets.",
+        "operationId": "search_permits_api_v1_permits_search_get",
+        "parameters": [
+          {
+            "name": "jurisdiction",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "e.g. 'Dallas, TX'",
+              "title": "Jurisdiction"
+            },
+            "description": "e.g. 'Dallas, TX'"
+          },
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "2-letter state code e.g. 'TX'",
+              "title": "State"
+            },
+            "description": "2-letter state code e.g. 'TX'"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "City name",
+              "title": "City"
+            },
+            "description": "City name"
+          },
+          {
+            "name": "contractor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Contractor name substring",
+              "title": "Contractor"
+            },
+            "description": "Contractor name substring"
+          },
+          {
+            "name": "category",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Permit category",
+              "title": "Category"
+            },
+            "description": "Permit category"
+          },
+          {
+            "name": "probable_roof_system",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Roof system membrane",
+              "title": "Probable Roof System"
+            },
+            "description": "Roof system membrane"
+          },
+          {
+            "name": "status_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Permit status e.g. 'Active', 'Finaled'",
+              "title": "Status Filter"
+            },
+            "description": "Permit status e.g. 'Active', 'Finaled'"
+          },
+          {
+            "name": "intelligence_mode",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "'all', 'active', 'aging', or 'multiphase'",
+              "title": "Intelligence Mode"
+            },
+            "description": "'all', 'active', 'aging', or 'multiphase'"
+          },
+          {
+            "name": "min_valuation",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Minimum USD valuation",
+              "title": "Min Valuation"
+            },
+            "description": "Minimum USD valuation"
+          },
+          {
+            "name": "max_valuation",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Maximum USD valuation",
+              "title": "Max Valuation"
+            },
+            "description": "Maximum USD valuation"
+          },
+          {
+            "name": "is_hail_storm_window",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter post-hail window",
+              "title": "Is Hail Storm Window"
+            },
+            "description": "Filter post-hail window"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Full-text query across address, contractor, permit #, or description",
+              "title": "Search"
+            },
+            "description": "Full-text query across address, contractor, permit #, or description"
+          },
+          {
+            "name": "sort_by",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "'valuation_desc', 'valuation_asc', 'date_desc', 'date_asc'",
+              "default": "valuation_desc",
+              "title": "Sort By"
+            },
+            "description": "'valuation_desc', 'valuation_asc', 'date_desc', 'date_asc'"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 500,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0,
+              "title": "Offset"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermitSearchResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/stats": {
+      "get": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "Get Permit Stats",
+        "description": "Returns aggregate breakdown and total valuation across the permit warehouse.",
+        "operationId": "get_permit_stats_api_v1_permits_stats_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PermitStatsResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/cities": {
+      "get": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "List Unique Cities",
+        "description": "Returns a list of all unique cities present in the permit warehouse.",
+        "operationId": "list_unique_cities_api_v1_permits_cities_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CityListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/active-jobsites": {
+      "get": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "Get Active Jobsites",
+        "description": "Real-Time Active Commercial Jobsite Tracker using purely municipal permit records.\nFinds active commercial re-roof and new roof projects currently undergoing construction in the field.",
+        "operationId": "get_active_jobsites_api_v1_permits_active_jobsites_get",
+        "parameters": [
+          {
+            "name": "jurisdiction",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by metro/city e.g. 'Dallas, TX', 'Addison', 'Seattle'",
+              "title": "Jurisdiction"
+            },
+            "description": "Filter by metro/city e.g. 'Dallas, TX', 'Addison', 'Seattle'"
+          },
+          {
+            "name": "contractor",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Search by contractor name or ID",
+              "title": "Contractor"
+            },
+            "description": "Search by contractor name or ID"
+          },
+          {
+            "name": "roof_system",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by roof system e.g. 'TPO Single-Ply'",
+              "title": "Roof System"
+            },
+            "description": "Filter by roof system e.g. 'TPO Single-Ply'"
+          },
+          {
+            "name": "min_valuation",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0.0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Minimum project valuation in USD",
+              "default": 0.0,
+              "title": "Min Valuation"
+            },
+            "description": "Minimum project valuation in USD"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Free text address, permit number, or contractor search",
+              "title": "Search"
+            },
+            "description": "Free text address, permit number, or contractor search"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Max jobsites to return",
+              "default": 50,
+              "title": "Limit"
+            },
+            "description": "Max jobsites to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Offset for pagination",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Offset for pagination"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ActiveJobsitesResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/roof-aging-alarm": {
+      "get": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "Get Roof Aging Alarm",
+        "description": "Pure Permit-Based Roof Aging & Replacement Alarm.\nScans historical municipal permits (10 to 25+ years old) with no subsequent re-roof permits,\nidentifying expiring manufacturer warranties (Carlisle, GAF, Elevate) ready for replacement pitch.",
+        "operationId": "get_roof_aging_alarm_api_v1_permits_roof_aging_alarm_get",
+        "parameters": [
+          {
+            "name": "jurisdiction",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by city/metro e.g. 'Dallas, TX', 'Addison'",
+              "title": "Jurisdiction"
+            },
+            "description": "Filter by city/metro e.g. 'Dallas, TX', 'Addison'"
+          },
+          {
+            "name": "risk_tier",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "'critical', 'high', 'approaching', or 'all'",
+              "default": "all",
+              "title": "Risk Tier"
+            },
+            "description": "'critical', 'high', 'approaching', or 'all'"
+          },
+          {
+            "name": "min_age",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 30,
+              "minimum": 5,
+              "description": "Minimum roof age in years",
+              "default": 10,
+              "title": "Min Age"
+            },
+            "description": "Minimum roof age in years"
+          },
+          {
+            "name": "min_valuation",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0.0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Minimum original permit valuation",
+              "default": 0.0,
+              "title": "Min Valuation"
+            },
+            "description": "Minimum original permit valuation"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Address, roofer, or permit search",
+              "title": "Search"
+            },
+            "description": "Address, roofer, or permit search"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Max leads to return",
+              "default": 50,
+              "title": "Limit"
+            },
+            "description": "Max leads to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Pagination offset",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Pagination offset"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RoofAgingAlarmResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/multiphase-projects": {
+      "get": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "Get Multiphase Projects",
+        "description": "Pure Permit-Based Multi-Phase Project Detector.\nDetects large commercial campuses, industrial logistics hubs, and corporate parks\nwith multiple building permits filed across phases (e.g. Phase 1, Phase 2, Building A/B).\nReveals general contractors and roofing trade partners winning recurring multi-building packages.",
+        "operationId": "get_multiphase_projects_api_v1_permits_multiphase_projects_get",
+        "parameters": [
+          {
+            "name": "jurisdiction",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter by city/metro e.g. 'Dallas, TX', 'Addison'",
+              "title": "Jurisdiction"
+            },
+            "description": "Filter by city/metro e.g. 'Dallas, TX', 'Addison'"
+          },
+          {
+            "name": "min_phases",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 20,
+              "minimum": 2,
+              "description": "Minimum number of permits filed at the address",
+              "default": 2,
+              "title": "Min Phases"
+            },
+            "description": "Minimum number of permits filed at the address"
+          },
+          {
+            "name": "min_valuation",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0.0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Minimum total campus valuation in USD",
+              "default": 0.0,
+              "title": "Min Valuation"
+            },
+            "description": "Minimum total campus valuation in USD"
+          },
+          {
+            "name": "status_filter",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "'active', 'completed', or 'all'",
+              "default": "all",
+              "title": "Status Filter"
+            },
+            "description": "'active', 'completed', or 'all'"
+          },
+          {
+            "name": "search",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Address or contractor search query",
+              "title": "Search"
+            },
+            "description": "Address or contractor search query"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 100,
+              "minimum": 1,
+              "description": "Max campus developments to return",
+              "default": 30,
+              "title": "Limit"
+            },
+            "description": "Max campus developments to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Offset for pagination",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Offset for pagination"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MultiPhaseProjectsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/permits/parcels/{parcel_id}": {
+      "get": {
+        "tags": [
+          "Permits Engine"
+        ],
+        "summary": "Get Parcel Detail",
+        "description": "Returns verified county appraisal district parcel details (owner, building sq ft, year built, valuation).",
+        "operationId": "get_parcel_detail_api_v1_permits_parcels__parcel_id__get",
+        "parameters": [
+          {
+            "name": "parcel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Parcel Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/storms/active-swaths": {
+      "get": {
+        "tags": [
+          "Storm Intelligence"
+        ],
+        "summary": "Get Active Storm Swaths",
+        "description": "Returns active severe convective hail storm swaths as standard GeoJSON\nFeatureCollections with Dual-Pol radar metrics and kinetic energy contours.\nQueries Supabase PostGIS storm_swaths with fallback to NOAA canonical swaths.",
+        "operationId": "get_active_storm_swaths_api_v1_storms_active_swaths_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GeoJSONFeatureCollection"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/storms/live-alerts": {
+      "get": {
+        "tags": [
+          "Storm Intelligence"
+        ],
+        "summary": "Get Live Weather Alerts",
+        "description": "Queries live real-time National Weather Service (NWS / NOAA) severe weather alerts\ndirectly from api.weather.gov for the specified state.",
+        "operationId": "get_live_weather_alerts_api_v1_storms_live_alerts_get",
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "default": "TX",
+              "title": "State"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/intelligence/unresolved-exposure": {
+      "get": {
+        "tags": [
+          "Commercial Intelligence"
+        ],
+        "summary": "Get Unresolved Exposure",
+        "description": "Identifies high-value commercial building assets located inside severe hail swaths\nthat have zero municipal repair permits filed.\nGenerates actionable lead target pipeline with physical kinetic damage metrics.\nQueries Supabase PostGIS parcels and storm_swaths with sub-second performance.",
+        "operationId": "get_unresolved_exposure_api_v1_intelligence_unresolved_exposure_get",
+        "parameters": [
+          {
+            "name": "min_sqft",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Minimum building square footage filter",
+              "default": 50000,
+              "title": "Min Sqft"
+            },
+            "description": "Minimum building square footage filter"
+          },
+          {
+            "name": "min_hail_inches",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "description": "Minimum hail diameter threshold",
+              "default": 1.75,
+              "title": "Min Hail Inches"
+            },
+            "description": "Minimum hail diameter threshold"
+          },
+          {
+            "name": "storm_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional specific storm ID filter",
+              "title": "Storm Id"
+            },
+            "description": "Optional specific storm ID filter"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 500,
+              "minimum": 1,
+              "description": "Max exposure targets to return",
+              "default": 100,
+              "title": "Limit"
+            },
+            "description": "Max exposure targets to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnresolvedExposureResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/contractors/leaderboard": {
+      "get": {
+        "tags": [
+          "Contractor Intelligence & Win Share"
+        ],
+        "summary": "Get Contractor Leaderboard",
+        "description": "Computes deduplicated commercial roofing contractor rankings, captured market share,\ntotal permitted revenue volume, and primary roof membrane systems.\nQueries Supabase canonical_contractors & normalized_permits directly with sub-10ms response times.",
+        "operationId": "get_contractor_leaderboard_api_v1_contractors_leaderboard_get",
+        "parameters": [
+          {
+            "name": "jurisdiction",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "e.g. 'Dallas, TX', 'Fort Worth, TX', or 'Cincinnati'",
+              "title": "Jurisdiction"
+            },
+            "description": "e.g. 'Dallas, TX', 'Fort Worth, TX', or 'Cincinnati'"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Max contractors to return",
+              "default": 50,
+              "title": "Limit"
+            },
+            "description": "Max contractors to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ContractorLeaderboardResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/jobs/trigger-sync": {
+      "post": {
+        "tags": [
+          "Background Jobs & SSE Streaming"
+        ],
+        "summary": "Trigger Sync Job",
+        "description": "Asynchronously triggers a municipal scraper job and creates an SSE stream session.",
+        "operationId": "trigger_sync_job_api_v1_jobs_trigger_sync_post",
+        "parameters": [
+          {
+            "name": "X-Depoii-Key",
+            "in": "header",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Secret API key for Depoii internal calls",
+              "title": "X-Depoii-Key"
+            },
+            "description": "Secret API key for Depoii internal calls"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TriggerSyncRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TriggerSyncResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/jobs/{job_id}/stream": {
+      "get": {
+        "tags": [
+          "Background Jobs & SSE Streaming"
+        ],
+        "summary": "Stream Job Progress",
+        "description": "Server-Sent Events (SSE) stream endpoint for live real-time ingestion progress.",
+        "operationId": "stream_job_progress_api_v1_jobs__job_id__stream_get",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/parcels/tarrant": {
+      "get": {
+        "tags": [
+          "Commercial Property Parcels"
+        ],
+        "summary": "Get Tarrant Parcels",
+        "description": "Harvests live commercial building parcels directly from Tarrant Appraisal District (TAD)\nESRI ArcGIS REST MapServer at $0 external API cost.",
+        "operationId": "get_tarrant_parcels_api_v1_parcels_tarrant_get",
+        "parameters": [
+          {
+            "name": "min_sqft",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Minimum building square footage",
+              "default": 20000,
+              "title": "Min Sqft"
+            },
+            "description": "Minimum building square footage"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter city (e.g., 'Fort Worth', 'Arlington')",
+              "title": "City"
+            },
+            "description": "Filter city (e.g., 'Fort Worth', 'Arlington')"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Maximum parcels to return",
+              "default": 50,
+              "title": "Limit"
+            },
+            "description": "Maximum parcels to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParcelListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/parcels/dallas": {
+      "get": {
+        "tags": [
+          "Commercial Property Parcels"
+        ],
+        "summary": "Get Dallas Parcels",
+        "description": "Harvests live commercial building parcels directly from Dallas Central Appraisal District (DCAD)\nESRI ArcGIS REST FeatureServer at $0 external API cost.",
+        "operationId": "get_dallas_parcels_api_v1_parcels_dallas_get",
+        "parameters": [
+          {
+            "name": "min_sqft",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Minimum building square footage",
+              "default": 20000,
+              "title": "Min Sqft"
+            },
+            "description": "Minimum building square footage"
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter city (e.g., 'Dallas', 'Addison', 'Irving')",
+              "title": "City"
+            },
+            "description": "Filter city (e.g., 'Dallas', 'Addison', 'Irving')"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Maximum parcels to return",
+              "default": 50,
+              "title": "Limit"
+            },
+            "description": "Maximum parcels to return"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParcelListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/parcels/search": {
+      "get": {
+        "tags": [
+          "Commercial Property Parcels"
+        ],
+        "summary": "Search Parcels",
+        "description": "Unified Commercial Property Parcel search directly from Supabase PostgreSQL.\nSearches across all appraisal districts (DCAD, TAD, etc.) with city, county, and size filters.",
+        "operationId": "search_parcels_api_v1_parcels_search_get",
+        "parameters": [
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "City filter (e.g. 'Dallas', 'Fort Worth', 'Arlington')",
+              "title": "City"
+            },
+            "description": "City filter (e.g. 'Dallas', 'Fort Worth', 'Arlington')"
+          },
+          {
+            "name": "county",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "County filter (e.g. 'Dallas County', 'Tarrant County')",
+              "title": "County"
+            },
+            "description": "County filter (e.g. 'Dallas County', 'Tarrant County')"
+          },
+          {
+            "name": "min_sqft",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Minimum building sqft",
+              "default": 20000,
+              "title": "Min Sqft"
+            },
+            "description": "Minimum building sqft"
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Data source filter (e.g. 'TAD' or 'DCAD')",
+              "title": "Source"
+            },
+            "description": "Data source filter (e.g. 'TAD' or 'DCAD')"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParcelListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/parcels": {
+      "get": {
+        "tags": [
+          "Commercial Property Parcels"
+        ],
+        "summary": "Search Parcels",
+        "description": "Unified Commercial Property Parcel search directly from Supabase PostgreSQL.\nSearches across all appraisal districts (DCAD, TAD, etc.) with city, county, and size filters.",
+        "operationId": "search_parcels_api_v1_parcels_get",
+        "parameters": [
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "City filter (e.g. 'Dallas', 'Fort Worth', 'Arlington')",
+              "title": "City"
+            },
+            "description": "City filter (e.g. 'Dallas', 'Fort Worth', 'Arlington')"
+          },
+          {
+            "name": "county",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "County filter (e.g. 'Dallas County', 'Tarrant County')",
+              "title": "County"
+            },
+            "description": "County filter (e.g. 'Dallas County', 'Tarrant County')"
+          },
+          {
+            "name": "min_sqft",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Minimum building sqft",
+              "default": 20000,
+              "title": "Min Sqft"
+            },
+            "description": "Minimum building sqft"
+          },
+          {
+            "name": "source",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Data source filter (e.g. 'TAD' or 'DCAD')",
+              "title": "Source"
+            },
+            "description": "Data source filter (e.g. 'TAD' or 'DCAD')"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "default": 50,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ParcelListResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/parcels/dark-market/overdue": {
+      "get": {
+        "tags": [
+          "Commercial Property Parcels"
+        ],
+        "summary": "Get Dark Market Overdue Parcels",
+        "description": "Returns commercial parcels that are 15+ years old with ZERO permits pulled (Dark Market Overdue Roofs).",
+        "operationId": "get_dark_market_overdue_parcels_api_v1_parcels_dark_market_overdue_get",
+        "parameters": [
+          {
+            "name": "min_age",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Minimum building roof age in years",
+              "default": 15,
+              "title": "Min Age"
+            },
+            "description": "Minimum building roof age in years"
+          },
+          {
+            "name": "min_sqft",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "description": "Minimum building square footage",
+              "default": 20000,
+              "title": "Min Sqft"
+            },
+            "description": "Minimum building square footage"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 200,
+              "minimum": 1,
+              "description": "Maximum parcels to return",
+              "default": 50,
+              "title": "Limit"
+            },
+            "description": "Maximum parcels to return"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Offset for pagination",
+              "default": 0,
+              "title": "Offset"
+            },
+            "description": "Offset for pagination"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/parcels/{parcel_id}": {
+      "get": {
+        "tags": [
+          "Commercial Property Parcels"
+        ],
+        "summary": "Get Single Parcel",
+        "description": "Returns verified parcel information and any linked historical permits.",
+        "operationId": "get_single_parcel_api_v1_parcels__parcel_id__get",
+        "parameters": [
+          {
+            "name": "parcel_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Parcel Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/locations/hierarchy": {
+      "get": {
+        "tags": [
+          "Location Hierarchy & Coverage"
+        ],
+        "summary": "Get Location Hierarchy",
+        "description": "Returns full hierarchical breakdown of all jurisdictions organized strictly by State -> City.\nAggregates permit volumes, total commercial valuation, parcel data availability, and weather intelligence.",
+        "operationId": "get_location_hierarchy_api_v1_locations_hierarchy_get",
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Optional 2-letter state code filter (e.g. TX, OH, FL)",
+              "title": "State"
+            },
+            "description": "Optional 2-letter state code filter (e.g. TX, OH, FL)"
+          },
+          {
+            "name": "min_permits",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Minimum permit threshold per city",
+              "default": 1,
+              "title": "Min Permits"
+            },
+            "description": "Minimum permit threshold per city"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LocationHierarchyResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/locations/states": {
+      "get": {
+        "tags": [
+          "Location Hierarchy & Coverage"
+        ],
+        "summary": "List Available States",
+        "description": "Returns a high-level summary of all states currently loaded in the warehouse with key metrics.",
+        "operationId": "list_available_states_api_v1_locations_states_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "$ref": "#/components/schemas/StateSummaryItem"
+                  },
+                  "type": "array",
+                  "title": "Response List Available States Api V1 Locations States Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/locations/cities": {
+      "get": {
+        "tags": [
+          "Location Hierarchy & Coverage"
+        ],
+        "summary": "List Available Cities",
+        "description": "Returns a flat list of cities with full metadata, optionally filtered by state.",
+        "operationId": "list_available_cities_api_v1_locations_cities_get",
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Filter cities by state code (e.g. TX)",
+              "title": "State"
+            },
+            "description": "Filter cities by state code (e.g. TX)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/CityHierarchyItem"
+                  },
+                  "title": "Response List Available Cities Api V1 Locations Cities Get"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "tags": [
+          "Root"
+        ],
+        "summary": "Root",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/metrics": {
+      "get": {
+        "tags": [
+          "Observability"
+        ],
+        "summary": "Prometheus Metrics",
+        "description": "Exposes real-time Prometheus metrics in standard OpenMetrics format.\nScrapable by Prometheus, Datadog, or Grafana Agent.",
+        "operationId": "prometheus_metrics_metrics_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActiveJobsiteItem": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "permit_number": {
+            "type": "string",
+            "title": "Permit Number"
+          },
+          "address": {
+            "type": "string",
+            "title": "Address"
+          },
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "zip_code": {
+            "type": "string",
+            "title": "Zip Code"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction"
+          },
+          "contractor_name": {
+            "type": "string",
+            "title": "Contractor Name"
+          },
+          "contractor_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contractor Id"
+          },
+          "contractor_phone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contractor Phone"
+          },
+          "contractor_license": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contractor License"
+          },
+          "valuation": {
+            "type": "number",
+            "title": "Valuation"
+          },
+          "valuation_formatted": {
+            "type": "string",
+            "title": "Valuation Formatted"
+          },
+          "roof_system": {
+            "type": "string",
+            "title": "Roof System"
+          },
+          "issue_date": {
+            "type": "string",
+            "title": "Issue Date"
+          },
+          "applied_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Applied Date"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "scope_description": {
+            "type": "string",
+            "title": "Scope Description"
+          },
+          "latitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latitude"
+          },
+          "longitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Longitude"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "permit_number",
+          "address",
+          "city",
+          "state",
+          "zip_code",
+          "jurisdiction",
+          "contractor_name",
+          "valuation",
+          "valuation_formatted",
+          "roof_system",
+          "issue_date",
+          "status",
+          "category",
+          "scope_description"
+        ],
+        "title": "ActiveJobsiteItem"
+      },
+      "ActiveJobsitesResponse": {
+        "properties": {
+          "total_active_jobs": {
+            "type": "integer",
+            "title": "Total Active Jobs"
+          },
+          "active_pipeline_valuation_usd": {
+            "type": "number",
+            "title": "Active Pipeline Valuation Usd"
+          },
+          "active_pipeline_valuation_formatted": {
+            "type": "string",
+            "title": "Active Pipeline Valuation Formatted"
+          },
+          "active_contractors_count": {
+            "type": "integer",
+            "title": "Active Contractors Count"
+          },
+          "top_roof_systems": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Top Roof Systems"
+          },
+          "jurisdictions_available": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Jurisdictions Available"
+          },
+          "jobsites": {
+            "items": {
+              "$ref": "#/components/schemas/ActiveJobsiteItem"
+            },
+            "type": "array",
+            "title": "Jobsites"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_active_jobs",
+          "active_pipeline_valuation_usd",
+          "active_pipeline_valuation_formatted",
+          "active_contractors_count",
+          "top_roof_systems",
+          "jurisdictions_available",
+          "jobsites"
+        ],
+        "title": "ActiveJobsitesResponse"
+      },
+      "CityHierarchyItem": {
+        "properties": {
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "permit_count": {
+            "type": "integer",
+            "title": "Permit Count"
+          },
+          "total_valuation_usd": {
+            "type": "number",
+            "title": "Total Valuation Usd"
+          },
+          "roof_categories": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "Roof Categories"
+          },
+          "top_contractors": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Top Contractors"
+          },
+          "parcel_coverage": {
+            "type": "boolean",
+            "title": "Parcel Coverage"
+          },
+          "parcel_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parcel Source"
+          },
+          "has_active_storms": {
+            "type": "boolean",
+            "title": "Has Active Storms"
+          },
+          "storm_details": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Storm Details"
+          },
+          "portal_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Portal Url"
+          },
+          "cad_portal_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cad Portal Url"
+          },
+          "metro_area": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Metro Area"
+          },
+          "latitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latitude"
+          },
+          "longitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Longitude"
+          }
+        },
+        "type": "object",
+        "required": [
+          "city",
+          "state",
+          "permit_count",
+          "total_valuation_usd",
+          "roof_categories",
+          "top_contractors",
+          "parcel_coverage",
+          "has_active_storms"
+        ],
+        "title": "CityHierarchyItem"
+      },
+      "CityListResponse": {
+        "properties": {
+          "total_cities": {
+            "type": "integer",
+            "title": "Total Cities"
+          },
+          "cities": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Cities"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_cities",
+          "cities"
+        ],
+        "title": "CityListResponse"
+      },
+      "ContractorLeaderboardItem": {
+        "properties": {
+          "canonicalId": {
+            "type": "string",
+            "title": "Canonicalid"
+          },
+          "canonicalName": {
+            "type": "string",
+            "title": "Canonicalname"
+          },
+          "licenseNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Licensenumber"
+          },
+          "permitCount": {
+            "type": "integer",
+            "title": "Permitcount"
+          },
+          "totalValuationUSD": {
+            "type": "number",
+            "title": "Totalvaluationusd"
+          },
+          "totalValuationFormatted": {
+            "type": "string",
+            "title": "Totalvaluationformatted"
+          },
+          "marketSharePct": {
+            "type": "number",
+            "title": "Marketsharepct"
+          },
+          "primaryRoofSystem": {
+            "type": "string",
+            "title": "Primaryroofsystem"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction"
+          },
+          "aliases": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Aliases",
+            "default": []
+          },
+          "recentPermitIds": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Recentpermitids"
+          },
+          "websiteUrl": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Websiteurl"
+          },
+          "hqAddress": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Hqaddress"
+          },
+          "phoneNumber": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Phonenumber"
+          },
+          "yearFounded": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Yearfounded"
+          },
+          "crewCapacityEstimate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Crewcapacityestimate"
+          },
+          "manufacturerCertifications": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Manufacturercertifications"
+          },
+          "leadership": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Leadership"
+          },
+          "mAndAProfile": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mandaprofile"
+          }
+        },
+        "type": "object",
+        "required": [
+          "canonicalId",
+          "canonicalName",
+          "permitCount",
+          "totalValuationUSD",
+          "totalValuationFormatted",
+          "marketSharePct",
+          "primaryRoofSystem",
+          "jurisdiction"
+        ],
+        "title": "ContractorLeaderboardItem"
+      },
+      "ContractorLeaderboardResponse": {
+        "properties": {
+          "total_contractors": {
+            "type": "integer",
+            "title": "Total Contractors"
+          },
+          "total_industry_valuation_usd": {
+            "type": "number",
+            "title": "Total Industry Valuation Usd"
+          },
+          "jurisdiction_filter": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Jurisdiction Filter"
+          },
+          "leaderboard": {
+            "items": {
+              "$ref": "#/components/schemas/ContractorLeaderboardItem"
+            },
+            "type": "array",
+            "title": "Leaderboard"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_contractors",
+          "total_industry_valuation_usd",
+          "leaderboard"
+        ],
+        "title": "ContractorLeaderboardResponse"
+      },
+      "DepoiiNormalizedPermitSchema": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id",
+            "description": "Canonical ID: e.g. DEP-TX-DAL-COM-ROOF-26-000300"
+          },
+          "sourceSystem": {
+            "type": "string",
+            "title": "Sourcesystem"
+          },
+          "rawPermitNumber": {
+            "type": "string",
+            "title": "Rawpermitnumber"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "county": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "County"
+          },
+          "issueDate": {
+            "type": "string",
+            "title": "Issuedate"
+          },
+          "appliedDate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Applieddate"
+          },
+          "expirationDate": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expirationdate"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "normalizedAddress": {
+            "type": "string",
+            "title": "Normalizedaddress"
+          },
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "zipCode": {
+            "type": "string",
+            "title": "Zipcode"
+          },
+          "latitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latitude"
+          },
+          "longitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Longitude"
+          },
+          "parcelId": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parcelid"
+          },
+          "valuation": {
+            "type": "number",
+            "title": "Valuation"
+          },
+          "valuationFormatted": {
+            "type": "string",
+            "title": "Valuationformatted"
+          },
+          "category": {
+            "type": "string",
+            "title": "Category"
+          },
+          "rawDescription": {
+            "type": "string",
+            "title": "Rawdescription"
+          },
+          "squareFootage": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Squarefootage"
+          },
+          "probableRoofSystem": {
+            "type": "string",
+            "title": "Probableroofsystem"
+          },
+          "contractorName": {
+            "type": "string",
+            "title": "Contractorname"
+          },
+          "contractorLicense": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contractorlicense"
+          },
+          "contractorPhone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Contractorphone"
+          },
+          "isHailStormWindow": {
+            "type": "boolean",
+            "title": "Ishailstormwindow",
+            "default": false
+          },
+          "associatedStormEvent": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Associatedstormevent"
+          },
+          "isCompetitorCapture": {
+            "type": "boolean",
+            "title": "Iscompetitorcapture",
+            "default": false
+          },
+          "confidenceScore": {
+            "type": "integer",
+            "title": "Confidencescore",
+            "default": 100
+          },
+          "normalizedAt": {
+            "type": "string",
+            "title": "Normalizedat"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "sourceSystem",
+          "rawPermitNumber",
+          "jurisdiction",
+          "state",
+          "issueDate",
+          "status",
+          "normalizedAddress",
+          "city",
+          "zipCode",
+          "valuation",
+          "valuationFormatted",
+          "category",
+          "rawDescription",
+          "probableRoofSystem",
+          "contractorName",
+          "normalizedAt"
+        ],
+        "title": "DepoiiNormalizedPermitSchema"
+      },
+      "GeoJSONFeature": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "Feature"
+          },
+          "geometry": {
+            "$ref": "#/components/schemas/GeoJSONGeometry"
+          },
+          "properties": {
+            "additionalProperties": true,
+            "type": "object",
+            "title": "Properties"
+          }
+        },
+        "type": "object",
+        "required": [
+          "geometry",
+          "properties"
+        ],
+        "title": "GeoJSONFeature"
+      },
+      "GeoJSONFeatureCollection": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type",
+            "default": "FeatureCollection"
+          },
+          "features": {
+            "items": {
+              "$ref": "#/components/schemas/GeoJSONFeature"
+            },
+            "type": "array",
+            "title": "Features"
+          }
+        },
+        "type": "object",
+        "required": [
+          "features"
+        ],
+        "title": "GeoJSONFeatureCollection"
+      },
+      "GeoJSONGeometry": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "title": "Type"
+          },
+          "coordinates": {
+            "title": "Coordinates"
+          }
+        },
+        "type": "object",
+        "required": [
+          "type",
+          "coordinates"
+        ],
+        "title": "GeoJSONGeometry"
+      },
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "HealthCheckResponse": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "healthy | degraded | critical"
+          },
+          "engine_version": {
+            "type": "string",
+            "title": "Engine Version"
+          },
+          "environment": {
+            "type": "string",
+            "title": "Environment"
+          },
+          "uptime_seconds": {
+            "type": "number",
+            "title": "Uptime Seconds"
+          },
+          "database": {
+            "type": "string",
+            "title": "Database",
+            "description": "connected | disconnected | uninitialized"
+          },
+          "redis": {
+            "type": "string",
+            "title": "Redis",
+            "description": "connected | disconnected | simulated"
+          },
+          "jurisdictions_synced": {
+            "type": "integer",
+            "title": "Jurisdictions Synced"
+          },
+          "jurisdictions_stale": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Jurisdictions Stale",
+            "default": []
+          },
+          "last_sync_summary": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/JurisdictionSyncStatus"
+            },
+            "type": "object",
+            "title": "Last Sync Summary",
+            "default": {}
+          }
+        },
+        "type": "object",
+        "required": [
+          "status",
+          "engine_version",
+          "environment",
+          "uptime_seconds",
+          "database",
+          "redis",
+          "jurisdictions_synced"
+        ],
+        "title": "HealthCheckResponse"
+      },
+      "JurisdictionSyncStatus": {
+        "properties": {
+          "last_sync": {
+            "type": "string",
+            "title": "Last Sync"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "row_count": {
+            "type": "integer",
+            "title": "Row Count"
+          },
+          "etag": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Etag"
+          },
+          "drift_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Drift Pct"
+          }
+        },
+        "type": "object",
+        "required": [
+          "last_sync",
+          "status",
+          "row_count"
+        ],
+        "title": "JurisdictionSyncStatus"
+      },
+      "LocationHierarchyResponse": {
+        "properties": {
+          "total_states": {
+            "type": "integer",
+            "title": "Total States"
+          },
+          "total_cities": {
+            "type": "integer",
+            "title": "Total Cities"
+          },
+          "total_permits": {
+            "type": "integer",
+            "title": "Total Permits"
+          },
+          "total_valuation_usd": {
+            "type": "number",
+            "title": "Total Valuation Usd"
+          },
+          "states": {
+            "items": {
+              "$ref": "#/components/schemas/StateHierarchyItem"
+            },
+            "type": "array",
+            "title": "States"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_states",
+          "total_cities",
+          "total_permits",
+          "total_valuation_usd",
+          "states"
+        ],
+        "title": "LocationHierarchyResponse"
+      },
+      "MultiPhaseCampusItem": {
+        "properties": {
+          "campus_key": {
+            "type": "string",
+            "title": "Campus Key"
+          },
+          "address": {
+            "type": "string",
+            "title": "Address"
+          },
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "zip_code": {
+            "type": "string",
+            "title": "Zip Code"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction"
+          },
+          "total_phases": {
+            "type": "integer",
+            "title": "Total Phases"
+          },
+          "total_campus_valuation_usd": {
+            "type": "number",
+            "title": "Total Campus Valuation Usd"
+          },
+          "total_campus_valuation_formatted": {
+            "type": "string",
+            "title": "Total Campus Valuation Formatted"
+          },
+          "project_span_start": {
+            "type": "string",
+            "title": "Project Span Start"
+          },
+          "project_span_end": {
+            "type": "string",
+            "title": "Project Span End"
+          },
+          "active_phases_count": {
+            "type": "integer",
+            "title": "Active Phases Count"
+          },
+          "completed_phases_count": {
+            "type": "integer",
+            "title": "Completed Phases Count"
+          },
+          "participating_contractors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Participating Contractors"
+          },
+          "roof_systems_detected": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Roof Systems Detected"
+          },
+          "development_status": {
+            "type": "string",
+            "title": "Development Status"
+          },
+          "phases": {
+            "items": {
+              "$ref": "#/components/schemas/PermitPhaseDetail"
+            },
+            "type": "array",
+            "title": "Phases"
+          }
+        },
+        "type": "object",
+        "required": [
+          "campus_key",
+          "address",
+          "city",
+          "state",
+          "zip_code",
+          "jurisdiction",
+          "total_phases",
+          "total_campus_valuation_usd",
+          "total_campus_valuation_formatted",
+          "project_span_start",
+          "project_span_end",
+          "active_phases_count",
+          "completed_phases_count",
+          "participating_contractors",
+          "roof_systems_detected",
+          "development_status",
+          "phases"
+        ],
+        "title": "MultiPhaseCampusItem"
+      },
+      "MultiPhaseProjectsResponse": {
+        "properties": {
+          "total_campuses": {
+            "type": "integer",
+            "title": "Total Campuses"
+          },
+          "total_campus_pipeline_usd": {
+            "type": "number",
+            "title": "Total Campus Pipeline Usd"
+          },
+          "total_campus_pipeline_formatted": {
+            "type": "string",
+            "title": "Total Campus Pipeline Formatted"
+          },
+          "total_permits_across_campuses": {
+            "type": "integer",
+            "title": "Total Permits Across Campuses"
+          },
+          "jurisdictions_available": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Jurisdictions Available"
+          },
+          "campuses": {
+            "items": {
+              "$ref": "#/components/schemas/MultiPhaseCampusItem"
+            },
+            "type": "array",
+            "title": "Campuses"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_campuses",
+          "total_campus_pipeline_usd",
+          "total_campus_pipeline_formatted",
+          "total_permits_across_campuses",
+          "jurisdictions_available",
+          "campuses"
+        ],
+        "title": "MultiPhaseProjectsResponse"
+      },
+      "ParcelListResponse": {
+        "properties": {
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "source": {
+            "type": "string",
+            "title": "Source"
+          },
+          "parcels": {
+            "items": {
+              "$ref": "#/components/schemas/ParcelResponse"
+            },
+            "type": "array",
+            "title": "Parcels"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total",
+          "source",
+          "parcels"
+        ],
+        "title": "ParcelListResponse"
+      },
+      "ParcelResponse": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "address": {
+            "type": "string",
+            "title": "Address"
+          },
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "county": {
+            "type": "string",
+            "title": "County"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "zip_code": {
+            "type": "string",
+            "title": "Zip Code"
+          },
+          "building_sqft": {
+            "type": "integer",
+            "title": "Building Sqft"
+          },
+          "land_sqft": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Land Sqft"
+          },
+          "year_built": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year Built"
+          },
+          "property_type": {
+            "type": "string",
+            "title": "Property Type"
+          },
+          "owner_name": {
+            "type": "string",
+            "title": "Owner Name"
+          },
+          "total_valuation": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total Valuation"
+          },
+          "data_source": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Data Source"
+          },
+          "latitude": {
+            "type": "number",
+            "title": "Latitude"
+          },
+          "longitude": {
+            "type": "number",
+            "title": "Longitude"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "address",
+          "city",
+          "county",
+          "state",
+          "zip_code",
+          "building_sqft",
+          "property_type",
+          "owner_name",
+          "latitude",
+          "longitude"
+        ],
+        "title": "ParcelResponse"
+      },
+      "PermitPhaseDetail": {
+        "properties": {
+          "permit_id": {
+            "type": "string",
+            "title": "Permit Id"
+          },
+          "permit_number": {
+            "type": "string",
+            "title": "Permit Number"
+          },
+          "issue_date": {
+            "type": "string",
+            "title": "Issue Date"
+          },
+          "valuation": {
+            "type": "number",
+            "title": "Valuation"
+          },
+          "valuation_formatted": {
+            "type": "string",
+            "title": "Valuation Formatted"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "roof_system": {
+            "type": "string",
+            "title": "Roof System"
+          },
+          "contractor_name": {
+            "type": "string",
+            "title": "Contractor Name"
+          },
+          "scope_description": {
+            "type": "string",
+            "title": "Scope Description"
+          }
+        },
+        "type": "object",
+        "required": [
+          "permit_id",
+          "permit_number",
+          "issue_date",
+          "valuation",
+          "valuation_formatted",
+          "status",
+          "roof_system",
+          "contractor_name",
+          "scope_description"
+        ],
+        "title": "PermitPhaseDetail"
+      },
+      "PermitSearchResponse": {
+        "properties": {
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          },
+          "offset": {
+            "type": "integer",
+            "title": "Offset"
+          },
+          "limit": {
+            "type": "integer",
+            "title": "Limit"
+          },
+          "total_valuation": {
+            "type": "number",
+            "title": "Total Valuation"
+          },
+          "permits": {
+            "items": {
+              "$ref": "#/components/schemas/DepoiiNormalizedPermitSchema"
+            },
+            "type": "array",
+            "title": "Permits"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total",
+          "count",
+          "offset",
+          "limit",
+          "total_valuation",
+          "permits"
+        ],
+        "title": "PermitSearchResponse"
+      },
+      "PermitStatsResponse": {
+        "properties": {
+          "total_permits": {
+            "type": "integer",
+            "title": "Total Permits"
+          },
+          "total_valuation_usd": {
+            "type": "number",
+            "title": "Total Valuation Usd"
+          },
+          "by_category": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "By Category"
+          },
+          "by_roof_system": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "By Roof System"
+          },
+          "by_jurisdiction": {
+            "additionalProperties": {
+              "type": "integer"
+            },
+            "type": "object",
+            "title": "By Jurisdiction"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_permits",
+          "total_valuation_usd",
+          "by_category",
+          "by_roof_system",
+          "by_jurisdiction"
+        ],
+        "title": "PermitStatsResponse"
+      },
+      "RoofAgingAlarmResponse": {
+        "properties": {
+          "total_aging_roofs": {
+            "type": "integer",
+            "title": "Total Aging Roofs"
+          },
+          "total_replacement_pipeline_usd": {
+            "type": "number",
+            "title": "Total Replacement Pipeline Usd"
+          },
+          "total_replacement_pipeline_formatted": {
+            "type": "string",
+            "title": "Total Replacement Pipeline Formatted"
+          },
+          "critical_expired_count": {
+            "type": "integer",
+            "title": "Critical Expired Count"
+          },
+          "end_of_warranty_count": {
+            "type": "integer",
+            "title": "End Of Warranty Count"
+          },
+          "approaching_term_count": {
+            "type": "integer",
+            "title": "Approaching Term Count"
+          },
+          "jurisdictions_available": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Jurisdictions Available"
+          },
+          "leads": {
+            "items": {
+              "$ref": "#/components/schemas/RoofAgingLeadItem"
+            },
+            "type": "array",
+            "title": "Leads"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_aging_roofs",
+          "total_replacement_pipeline_usd",
+          "total_replacement_pipeline_formatted",
+          "critical_expired_count",
+          "end_of_warranty_count",
+          "approaching_term_count",
+          "jurisdictions_available",
+          "leads"
+        ],
+        "title": "RoofAgingAlarmResponse"
+      },
+      "RoofAgingLeadItem": {
+        "properties": {
+          "id": {
+            "type": "string",
+            "title": "Id"
+          },
+          "permit_number": {
+            "type": "string",
+            "title": "Permit Number"
+          },
+          "address": {
+            "type": "string",
+            "title": "Address"
+          },
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "zip_code": {
+            "type": "string",
+            "title": "Zip Code"
+          },
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction"
+          },
+          "install_date": {
+            "type": "string",
+            "title": "Install Date"
+          },
+          "roof_age_years": {
+            "type": "integer",
+            "title": "Roof Age Years"
+          },
+          "warranty_status": {
+            "type": "string",
+            "title": "Warranty Status"
+          },
+          "risk_level": {
+            "type": "string",
+            "title": "Risk Level"
+          },
+          "historical_contractor": {
+            "type": "string",
+            "title": "Historical Contractor"
+          },
+          "historical_contractor_phone": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Historical Contractor Phone"
+          },
+          "historical_valuation": {
+            "type": "number",
+            "title": "Historical Valuation"
+          },
+          "historical_valuation_formatted": {
+            "type": "string",
+            "title": "Historical Valuation Formatted"
+          },
+          "estimated_replacement_cost_usd": {
+            "type": "number",
+            "title": "Estimated Replacement Cost Usd"
+          },
+          "estimated_replacement_cost_formatted": {
+            "type": "string",
+            "title": "Estimated Replacement Cost Formatted"
+          },
+          "roof_system": {
+            "type": "string",
+            "title": "Roof System"
+          },
+          "scope_description": {
+            "type": "string",
+            "title": "Scope Description"
+          },
+          "subsequent_permits_count": {
+            "type": "integer",
+            "title": "Subsequent Permits Count"
+          },
+          "replacement_priority_score": {
+            "type": "integer",
+            "title": "Replacement Priority Score"
+          },
+          "latitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Latitude"
+          },
+          "longitude": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Longitude"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "permit_number",
+          "address",
+          "city",
+          "state",
+          "zip_code",
+          "jurisdiction",
+          "install_date",
+          "roof_age_years",
+          "warranty_status",
+          "risk_level",
+          "historical_contractor",
+          "historical_valuation",
+          "historical_valuation_formatted",
+          "estimated_replacement_cost_usd",
+          "estimated_replacement_cost_formatted",
+          "roof_system",
+          "scope_description",
+          "subsequent_permits_count",
+          "replacement_priority_score"
+        ],
+        "title": "RoofAgingLeadItem"
+      },
+      "StateHierarchyItem": {
+        "properties": {
+          "state_code": {
+            "type": "string",
+            "title": "State Code"
+          },
+          "state_name": {
+            "type": "string",
+            "title": "State Name"
+          },
+          "total_permits": {
+            "type": "integer",
+            "title": "Total Permits"
+          },
+          "total_valuation_usd": {
+            "type": "number",
+            "title": "Total Valuation Usd"
+          },
+          "city_count": {
+            "type": "integer",
+            "title": "City Count"
+          },
+          "has_parcel_coverage": {
+            "type": "boolean",
+            "title": "Has Parcel Coverage"
+          },
+          "has_active_storms": {
+            "type": "boolean",
+            "title": "Has Active Storms"
+          },
+          "cities": {
+            "items": {
+              "$ref": "#/components/schemas/CityHierarchyItem"
+            },
+            "type": "array",
+            "title": "Cities"
+          }
+        },
+        "type": "object",
+        "required": [
+          "state_code",
+          "state_name",
+          "total_permits",
+          "total_valuation_usd",
+          "city_count",
+          "has_parcel_coverage",
+          "has_active_storms",
+          "cities"
+        ],
+        "title": "StateHierarchyItem"
+      },
+      "StateSummaryItem": {
+        "properties": {
+          "state_code": {
+            "type": "string",
+            "title": "State Code"
+          },
+          "state_name": {
+            "type": "string",
+            "title": "State Name"
+          },
+          "total_permits": {
+            "type": "integer",
+            "title": "Total Permits"
+          },
+          "total_valuation_usd": {
+            "type": "number",
+            "title": "Total Valuation Usd"
+          },
+          "city_count": {
+            "type": "integer",
+            "title": "City Count"
+          },
+          "has_parcel_coverage": {
+            "type": "boolean",
+            "title": "Has Parcel Coverage"
+          },
+          "has_active_storms": {
+            "type": "boolean",
+            "title": "Has Active Storms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "state_code",
+          "state_name",
+          "total_permits",
+          "total_valuation_usd",
+          "city_count",
+          "has_parcel_coverage",
+          "has_active_storms"
+        ],
+        "title": "StateSummaryItem"
+      },
+      "SyncResponse": {
+        "properties": {
+          "jurisdiction": {
+            "type": "string",
+            "title": "Jurisdiction"
+          },
+          "source_system": {
+            "type": "string",
+            "title": "Source System"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "records_fetched": {
+            "type": "integer",
+            "title": "Records Fetched"
+          },
+          "records_normalized": {
+            "type": "integer",
+            "title": "Records Normalized"
+          },
+          "duplicates_removed": {
+            "type": "integer",
+            "title": "Duplicates Removed"
+          },
+          "duration_seconds": {
+            "type": "number",
+            "title": "Duration Seconds"
+          },
+          "etag": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Etag"
+          },
+          "drift_pct": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Drift Pct"
+          },
+          "error_message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "jurisdiction",
+          "source_system",
+          "status",
+          "records_fetched",
+          "records_normalized",
+          "duplicates_removed",
+          "duration_seconds",
+          "etag",
+          "drift_pct"
+        ],
+        "title": "SyncResponse"
+      },
+      "TriggerSyncRequest": {
+        "properties": {
+          "city_key": {
+            "type": "string",
+            "title": "City Key"
+          }
+        },
+        "type": "object",
+        "required": [
+          "city_key"
+        ],
+        "title": "TriggerSyncRequest"
+      },
+      "TriggerSyncResponse": {
+        "properties": {
+          "job_id": {
+            "type": "string",
+            "title": "Job Id"
+          },
+          "city_key": {
+            "type": "string",
+            "title": "City Key"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "stream_url": {
+            "type": "string",
+            "title": "Stream Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "job_id",
+          "city_key",
+          "status",
+          "stream_url"
+        ],
+        "title": "TriggerSyncResponse"
+      },
+      "UnresolvedExposureResponse": {
+        "properties": {
+          "total_targets": {
+            "type": "integer",
+            "title": "Total Targets"
+          },
+          "storm_name": {
+            "type": "string",
+            "title": "Storm Name"
+          },
+          "event_date": {
+            "type": "string",
+            "title": "Event Date"
+          },
+          "max_hail_inches": {
+            "type": "number",
+            "title": "Max Hail Inches"
+          },
+          "total_unresolved_valuation_mid": {
+            "type": "number",
+            "title": "Total Unresolved Valuation Mid"
+          },
+          "targets": {
+            "items": {
+              "$ref": "#/components/schemas/UnresolvedExposureTarget"
+            },
+            "type": "array",
+            "title": "Targets"
+          }
+        },
+        "type": "object",
+        "required": [
+          "total_targets",
+          "storm_name",
+          "event_date",
+          "max_hail_inches",
+          "total_unresolved_valuation_mid",
+          "targets"
+        ],
+        "title": "UnresolvedExposureResponse"
+      },
+      "UnresolvedExposureTarget": {
+        "properties": {
+          "parcelId": {
+            "type": "string",
+            "title": "Parcelid"
+          },
+          "address": {
+            "type": "string",
+            "title": "Address"
+          },
+          "city": {
+            "type": "string",
+            "title": "City"
+          },
+          "zipCode": {
+            "type": "string",
+            "title": "Zipcode"
+          },
+          "state": {
+            "type": "string",
+            "title": "State"
+          },
+          "buildingSqft": {
+            "type": "integer",
+            "title": "Buildingsqft"
+          },
+          "yearBuilt": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Yearbuilt"
+          },
+          "propertyType": {
+            "type": "string",
+            "title": "Propertytype",
+            "default": "Commercial Warehouse"
+          },
+          "ownerName": {
+            "type": "string",
+            "title": "Ownername"
+          },
+          "stormName": {
+            "type": "string",
+            "title": "Stormname"
+          },
+          "eventDate": {
+            "type": "string",
+            "title": "Eventdate"
+          },
+          "maxHailInches": {
+            "type": "number",
+            "title": "Maxhailinches"
+          },
+          "kineticEnergyJoules": {
+            "type": "number",
+            "title": "Kineticenergyjoules"
+          },
+          "estimatedReplacementLow": {
+            "type": "number",
+            "title": "Estimatedreplacementlow"
+          },
+          "estimatedReplacementHigh": {
+            "type": "number",
+            "title": "Estimatedreplacementhigh"
+          },
+          "estimatedReplacementMid": {
+            "type": "number",
+            "title": "Estimatedreplacementmid"
+          },
+          "estimatedReplacementFormatted": {
+            "type": "string",
+            "title": "Estimatedreplacementformatted"
+          },
+          "hasRepairPermit": {
+            "type": "boolean",
+            "title": "Hasrepairpermit",
+            "default": false
+          },
+          "monthsUnrepaired": {
+            "type": "integer",
+            "title": "Monthsunrepaired"
+          },
+          "unresolvedExposureScore": {
+            "type": "integer",
+            "title": "Unresolvedexposurescore"
+          },
+          "leadTier": {
+            "type": "string",
+            "title": "Leadtier",
+            "default": "TIER_1_ENTERPRISE"
+          }
+        },
+        "type": "object",
+        "required": [
+          "parcelId",
+          "address",
+          "city",
+          "zipCode",
+          "state",
+          "buildingSqft",
+          "ownerName",
+          "stormName",
+          "eventDate",
+          "maxHailInches",
+          "kineticEnergyJoules",
+          "estimatedReplacementLow",
+          "estimatedReplacementHigh",
+          "estimatedReplacementMid",
+          "estimatedReplacementFormatted",
+          "monthsUnrepaired",
+          "unresolvedExposureScore"
+        ],
+        "title": "UnresolvedExposureTarget"
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          },
+          "input": {
+            "title": "Input"
+          },
+          "ctx": {
+            "type": "object",
+            "title": "Context"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      }
+    }
+  }
+}

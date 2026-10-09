@@ -1,0 +1,3658 @@
+{
+  "PermitTypes": [
+    {
+      "PermitTypeId": "",
+      "PermitTypeName": "",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b36e7b47-8826-4b01-bbe6-9fe63261edb5",
+          "WorkclassName": "Above Ground",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cd1217f5-0fe5-1581-421d-02ee87492cea",
+          "WorkclassName": "Access Control",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "543651b9-ee18-4bca-b1d4-40bf0d48a59f",
+          "WorkclassName": "Accessory Building",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "12768b58-4cc6-610c-e701-5e40c8bb9948",
+          "WorkclassName": "Addendum",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ace24e6e-e433-9c8c-4a70-e8e219b0167b",
+          "WorkclassName": "Attached Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8e01387f-eb11-438e-ab4b-68914d5f10a1",
+          "WorkclassName": "Backflow Prevention Assembly",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fe6d6b27-a0cd-4362-ac0b-ddb7fd6a448a",
+          "WorkclassName": "Booth",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "4dc91279-8a9b-4846-8773-80e5542be367",
+          "WorkclassName": "Burglar Alarm",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "36829083-1fff-4b96-97c0-2c7f743eba12",
+          "WorkclassName": "Cat",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a6e339fd-4a7c-4108-a67d-d6f63e7a838d",
+          "WorkclassName": "Clean & Show",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ebb4407f-4a2b-411e-9f49-32aa66b19b59",
+          "WorkclassName": "CO",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "91e96485-8ada-4723-8ffe-d6431a928124",
+          "WorkclassName": "Commercial - Solar Panel ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "98c3764a-31f1-4cf2-8ce5-0635a8a000ee",
+          "WorkclassName": "Commercial Accessory Building",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ae9d8d61-d550-4463-b51b-0b1db4ea96b2",
+          "WorkclassName": "Commercial Addition/Alteration",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9ce59ee7-0deb-49cd-ae02-00143c74719b",
+          "WorkclassName": "Commercial Drive Approach",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7234e5b8-7b00-47f6-bf06-75397bf8cb84",
+          "WorkclassName": "Commercial Remodel",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7ee240f5-1aa5-42ce-a0bf-bac7f5703a15",
+          "WorkclassName": "Concrete Flatwork",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5b49fab0-29ef-844f-0997-57a1a5ed7a27",
+          "WorkclassName": "Detached Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "985019ed-7162-47a5-ad52-4ce26cd7ac3b",
+          "WorkclassName": "Dog",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d8a85e9a-ebd2-4645-82ca-3803234d92b2",
+          "WorkclassName": "DRAINAGE PIPING",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f8a51cb0-f948-47d7-bdd5-1f7a13b07bd3",
+          "WorkclassName": "Electrical Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1d0d7a28-b86d-347c-e0ed-fbeb5735870c",
+          "WorkclassName": "Electrical Generator - Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "45d8eb70-a2d0-f77c-9bc4-904118021318",
+          "WorkclassName": "Electrical Generator - Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8fbf58f5-6403-4dcb-b62e-24334cfb7238",
+          "WorkclassName": "Electrical Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2f463edc-ac0b-6511-3c70-c3337bcd4593",
+          "WorkclassName": "Electrical Service Repair/Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f47a94e-138a-4cce-ba9a-7606309ae7ef",
+          "WorkclassName": "Electrical Service/Panel Upgrade",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fce30302-70fd-447e-ac19-fb6b997fb83f",
+          "WorkclassName": "Existing Monument Sign Reface",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9c3543a5-73e3-45d1-b88f-7014c35454a5",
+          "WorkclassName": "Ferret",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7bc6ec5c-7bda-dcd3-8688-d7d53651f50a",
+          "WorkclassName": "Fire Alarm",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "60974de4-8f3e-334b-1cce-6a07ba4d57cb",
+          "WorkclassName": "Fire Sprinkler",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "48e73f0a-f65c-4eb7-9802-21f76e9713be",
+          "WorkclassName": "Fire Sprinkler System Underground",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "13b483e6-0649-4d06-a0d8-7ed4703cd54e",
+          "WorkclassName": "Flag",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "89cbbefe-23ab-4cc2-8ba3-8202d96e4686",
+          "WorkclassName": "Flow Test",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8eb0c192-70bf-4123-8ac2-0c476e670ebb",
+          "WorkclassName": "Franchise",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "474a10f0-80b1-4b04-8b99-eab87ad6918e",
+          "WorkclassName": "Gas Repair/Release",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f36ff668-f957-48ef-86db-c5ed6f8df87e",
+          "WorkclassName": "Gas Well",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "09946b73-b9f8-4535-b16f-baf2d5ef74c2",
+          "WorkclassName": "General",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7b7940de-d244-4370-86d7-7aaf1ae1209c",
+          "WorkclassName": "Hood-Fans",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a0dcc100-cd4f-4da4-db00-0c8b698fb132",
+          "WorkclassName": "Kitchen Hood System",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "295564d3-f013-40a4-81ac-3d66896fc613",
+          "WorkclassName": "Live-Work Units",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f82ba494-45d1-45bf-8612-1061a74400cb",
+          "WorkclassName": "Lodging Houses",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "563a6805-86f7-251d-799c-ca1eaccb05d6",
+          "WorkclassName": "Mechanical Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c230caa2-c70d-4d22-be1d-6666aecef902",
+          "WorkclassName": "Mechanical Duct Work Only",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "25252a49-4233-428c-9b20-188998350bb9",
+          "WorkclassName": "Mechanical HVAC Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b8e11ef4-46f9-444c-974f-656f45158e2c",
+          "WorkclassName": "Mechanical Miscellaneous",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1489e7cd-2a0f-41b9-a814-95eae2a19d11",
+          "WorkclassName": "New Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a8f65621-fe36-4c2d-a742-0296e0bb67f3",
+          "WorkclassName": "New Duplex",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b1c8e10e-cdcc-450b-bf16-43669619fd85",
+          "WorkclassName": "New Multi-Family",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0e564895-5229-4c0d-94f5-dfb16e79fced",
+          "WorkclassName": "New Single Family Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ac5f10ab-1871-46b7-8f09-c5ec8f00092c",
+          "WorkclassName": "New Townhomes",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d21655be-aab5-4413-8390-a0abd79bde91",
+          "WorkclassName": "New Tree Installation",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f8194d8-29f0-4bd3-a9f3-71accb6e977b",
+          "WorkclassName": "Plumbing Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f89bb30e-162f-41d8-ae64-abe100be8dcf",
+          "WorkclassName": "Plumbing Backflow Device",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "97d16431-b23d-4484-9605-91814bd115ee",
+          "WorkclassName": "Pyrotechnical Special Effects",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "620e029a-5a8c-4523-bdfd-78df35ca95da",
+          "WorkclassName": "Remodel/Finish-Out",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "57028289-3150-4bdf-9687-f7129664f1a5",
+          "WorkclassName": "Residential - Solar Panel ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "15f749fc-e9f7-4027-bdb4-c022d690f7db",
+          "WorkclassName": "Residential - Spa/ Hot Tub/ Fountain ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "06822bdc-9c14-4c2b-b75f-79a9932f7946",
+          "WorkclassName": "Residential Accessory Building",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cb64d195-9c7e-4917-af06-70ec91fcb981",
+          "WorkclassName": "Residential Remodel",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3a8ff664-89fb-42b6-956e-9e92da913d30",
+          "WorkclassName": "Right Of Way Development",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8e449f74-ae43-48b9-b355-2065d78179b3",
+          "WorkclassName": "Right Of Way Franchise/CTP",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "23f65556-1c92-4417-952c-dbeeaa3f7224",
+          "WorkclassName": "Right Of Way General",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f07a5007-4701-4ac8-b7df-9f62f46e164f",
+          "WorkclassName": "Right Of Way Lane Closure",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "194cd756-bf0b-42f4-bf23-46346fc954f5",
+          "WorkclassName": "Right Of Way Town Maintenance",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e89df62d-8b8d-4c3a-8483-5940239eb1ea",
+          "WorkclassName": "Robbery/Panic/Hold Up Alarm",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "864c1369-c4e7-4472-8519-249a75636fa0",
+          "WorkclassName": "Sales Trailer",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2590768d-0d5d-44d2-9286-89cbdbf0e8e7",
+          "WorkclassName": "Security Gates",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "4ebaf048-1c00-4b53-a825-630b1952da2f",
+          "WorkclassName": "Services",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00d82983-298d-47d6-b0ab-b236628be5d1",
+          "WorkclassName": "SHORT TERM RENTAL ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7c40b5ea-ce9d-469b-8902-ee860024a4b3",
+          "WorkclassName": "SLAB LEAK ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f12415d4-190c-47f8-8a21-ef12f6e8c3b8",
+          "WorkclassName": "SLAB LEAK",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8b85951e-b652-48a5-98da-59778cb755b3",
+          "WorkclassName": "Small Cell",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e614430a-4f03-4ee4-9649-fb6297d1b412",
+          "WorkclassName": "Spa",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cf5c8a4d-5864-4ccc-893d-15845385cf30",
+          "WorkclassName": "Special Event Banner",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "bcb9cc07-6e02-48fa-ae90-cd40fc5c238d",
+          "WorkclassName": "Special Events/Promotions",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "31e9e3e8-1ebd-8291-9624-25ebadee3979",
+          "WorkclassName": "Temporary Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "94ed7f07-7f31-409f-a590-fdaa95d0d066",
+          "WorkclassName": "Temporary Use",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b82ca24b-c3e3-4ee0-8580-d77c0d6b27a9",
+          "WorkclassName": "Tents",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f901d2cd-f0af-40a8-9a73-1613850080af",
+          "WorkclassName": "Theatre Tenant Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "18a83087-d9ed-4a14-a654-aa9e2708a4dc",
+          "WorkclassName": "Tree Maintenance",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9b189519-1ab7-4a34-ae54-15fd3ed3a06b",
+          "WorkclassName": "Tree Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1ca1d0a8-c264-4bf3-abd0-a2b5fb72d6e6",
+          "WorkclassName": "Tree Pruning/Trimming",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "795e5d30-2bae-451a-9a27-b68c9c90a53e",
+          "WorkclassName": "Tree Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "755aadb7-683b-4418-8ac9-216048ac7933",
+          "WorkclassName": "Tree Transplanting",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "436e6fd2-1e59-494d-a93e-ff1bb673e4ab",
+          "WorkclassName": "Water Heater Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "53002f5e-f326-4024-8aaa-8077060551c8",
+          "WorkclassName": "Water or Sewer Relay",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "39b9a07c-436b-4f52-8807-5c435ee69319",
+          "WorkclassName": "Window Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cd3fcff4-317b-4ee8-a76c-043711ff3fbe",
+          "WorkclassName": "Z NOT USED -  M-FURNACE & AC COIL & CONDENSOR REP",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "255f83d8-9c90-4490-9853-ff092c827be5",
+          "WorkclassName": "Z NOT USED - Amusement Facility(NOTINUSE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b2134287-c0c0-459a-8ab4-df3c107279bd",
+          "WorkclassName": "Z NOT USED - Attached Garage",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7ff3d125-d3d7-407c-9523-37ad0b123089",
+          "WorkclassName": "Z NOT USED - Attached Garage Under Slab",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "15c0612a-4325-4b90-b5e7-fc3be7e8def8",
+          "WorkclassName": "Z NOT USED - Attorney Law(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "989b5467-d3b0-45e2-b858-241b05190da1",
+          "WorkclassName": "Z NOT USED - Auto Oil Lube(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "6fabdef4-2b5a-472f-8a5b-636aac01e38b",
+          "WorkclassName": "Z NOT USED - Auto Repair(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "523be80e-c19f-473a-a7bb-03fd05792cf7",
+          "WorkclassName": "Z NOT USED - Auto Retail(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3600dd86-acf0-4839-abe6-87ee71d72976",
+          "WorkclassName": "Z NOT USED - Auto Sales(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d3105429-2214-486b-98c4-7137a3ac1b12",
+          "WorkclassName": "Z NOT USED - Auto Service Station(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5e7ffa01-8021-45a0-ae81-8c91ffd97844",
+          "WorkclassName": "Z NOT USED - Awning Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e851e5f1-2e7b-4532-b1fc-ce959fffca14",
+          "WorkclassName": "Z NOT USED - Banner",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ad968d9e-0836-4bb8-9028-1cdbd265521d",
+          "WorkclassName": "Z NOT USED - Blade Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "6c1cb863-3c63-45f4-977c-591e756c5b36",
+          "WorkclassName": "Z NOT USED - Builder",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ca7a7d90-67e6-494b-9446-ce7e04891ac6",
+          "WorkclassName": "Z NOT USED - Building Identification Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "027bf0de-6516-45b7-9e59-c622804d3085",
+          "WorkclassName": "Z NOT USED - Business Identification Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fcff1f07-5891-4b94-bc34-d394e5ec350a",
+          "WorkclassName": "Z NOT USED - CO Aircraft",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "19c60a5b-50b0-4a8d-8078-e5a1fb567ff0",
+          "WorkclassName": "Z NOT USED - CO Assembly",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7f7137b2-2633-4012-af55-8eb257035958",
+          "WorkclassName": "Z NOT USED - CO Auto",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "350e2e30-2644-4010-b0fa-8bbf3fef3f01",
+          "WorkclassName": "Z NOT USED - CO Education",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "612dff60-70a5-4623-b116-297746672fdf",
+          "WorkclassName": "Z NOT USED - CO Food Establishment",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "31278d09-8b1f-442e-9b16-1c22a6407918",
+          "WorkclassName": "Z NOT USED - CO Industrial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5c4d586b-70fb-4e24-b09a-1d715bd4d8b0",
+          "WorkclassName": "Z NOT USED - CO Lodging ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "147c8303-d10a-4181-ad8d-a1b69071850e",
+          "WorkclassName": "Z NOT USED - CO Medical",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e87ab9dc-e3ca-4672-adba-ea6322ac200c",
+          "WorkclassName": "Z NOT USED - CO Multifamily",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f45f13a-a23f-422a-972b-510a233c100a",
+          "WorkclassName": "Z NOT USED - CO Office",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b212361c-bcfa-4018-8e01-b20efb2b4915",
+          "WorkclassName": "Z NOT USED - CO Retail",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d39ae0c3-01e2-4956-8549-b1f693465b95",
+          "WorkclassName": "Z NOT USED - CO Townhome ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ac5ad727-5242-4e61-952a-1af3552c1292",
+          "WorkclassName": "Z NOT USED - CO Warehouse",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "A5E08B4B-42FD-480F-B3AD-3170E7371F1B",
+          "WorkclassName": "Z NOT USED - CO Wholesale",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9b4c325d-e397-427d-bc9e-fa29d7f21f67",
+          "WorkclassName": "Z NOT USED - Commercial Arbor (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c1b62d5c-6a6a-4d17-bc2d-99d456e87cff",
+          "WorkclassName": "Z NOT USED - Commercial Cabana (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "77305a4f-39c3-47ae-b3f1-e577ada1754d",
+          "WorkclassName": "Z NOT USED - Commercial Carport (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "16fa70bd-4be4-48ee-b124-e789356e8385",
+          "WorkclassName": "Z NOT USED - Commercial Garage (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "81a90f5d-ab7f-4fd5-8343-e05e18c2fc58",
+          "WorkclassName": "Z NOT USED - Compressed Natural Gas",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "bedb5d80-7930-4473-0847-380ea3bfac20",
+          "WorkclassName": "Z NOT USED - Concrete Flatwork",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d8efd94c-1781-4d22-8373-836315d044a4",
+          "WorkclassName": "Z NOT USED - Condominiums",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c4c2444a-b2b7-4eea-a22c-0fa5d6a1e90f",
+          "WorkclassName": "Z NOT USED - Construction Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "62891bcf-3fbc-4edd-a776-4c8f11d996e9",
+          "WorkclassName": "Z NOT USED - COVID TEMP OUTDOOR DINNING PERMIT  ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9b838275-4d86-4e8c-912e-6cae6d474ed3",
+          "WorkclassName": "Z NOT USED - Dental Office(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "6ec1ebb1-4730-47a3-bf43-26a63dca6d94",
+          "WorkclassName": "Z NOT USED - Detached Garage",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9cb0ea27-5b15-49f7-8eff-4214051ec683",
+          "WorkclassName": "Z NOT USED - Detached Garage Under Slab",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9cce0062-5f1d-4687-ab65-4f62ec9a64b7",
+          "WorkclassName": "Z NOT USED - E-Clean-and-Show(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1e84ae56-c891-4f73-921e-4b6597bc1896",
+          "WorkclassName": "Z NOT USED - Educational Office",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "52ca1079-a994-4eda-b954-a5a694f83274",
+          "WorkclassName": "Z NOT USED - E-Electric To Pool(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "940dce2d-e972-486d-8637-ad84fef445a2",
+          "WorkclassName": "Z NOT USED - E-Gasline(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "709ee605-a02a-4bb7-b477-bffb2de1aa1b",
+          "WorkclassName": "Z NOT USED - EL - ELEC GROUNDING-BONDING SYSTEM",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9d904e60-5370-4a2f-8eaa-3414a844b967",
+          "WorkclassName": "Z NOT USED - EL - ELEC LIGHTNING- PROTECTION ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e792ea91-4abf-4b09-9079-d495c3033795",
+          "WorkclassName": "Z NOT USED - EL - TEMPORARY ELECTRICAL POLE",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a7cc1108-b2fd-402e-ac64-10b6f6441be8",
+          "WorkclassName": "Z NOT USED - E-Re-Roof(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3e5285c1-7f78-4acf-a42f-5a97a4b527f9",
+          "WorkclassName": "Z NOT USED - Existing Pole Sign Reface",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "dfad6883-d3fb-4967-bdc2-7ec254cfe73a",
+          "WorkclassName": "Z NOT USED - Finish Out (NOT IN USE)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "43abdcd1-1ae1-4533-b5a7-bfb3f474f108",
+          "WorkclassName": "Z NOT USED - Flag Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0075cd29-f50d-4920-9e61-33407d364add",
+          "WorkclassName": "Z NOT USED - Grocery Tenant Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "bf32c06e-329f-4c53-81a6-b4d0a334a457",
+          "WorkclassName": "Z NOT USED - Health Club Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a2edc68b-00bd-4bc4-a560-fd530a4385c9",
+          "WorkclassName": "Z NOT USED - Higher Learning",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2da83366-32d1-4da7-9a75-1a86e6a592ef",
+          "WorkclassName": "Z NOT USED - In Ground(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fb0f9fa1-a3df-4c43-97b4-23bb5356d69d",
+          "WorkclassName": "Z NOT USED - Industrial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f4c2e37d-4d44-43f0-a281-5e5ee4cdfbd2",
+          "WorkclassName": "Z NOT USED - Industrial Remodel",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "717df1c6-8bec-42a7-af21-7a1f69e9265c",
+          "WorkclassName": "Z NOT USED - Insurance(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1ca7f2ef-4d0e-4d5c-8c0d-1954253ca8e5",
+          "WorkclassName": "Z NOT USED - Kiosk Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ebabb2ba-2f23-4739-9bfb-fbb3485e0997",
+          "WorkclassName": "Z NOT USED - M-AC CONDESING UNIT REPLACEMENT",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3e5bb968-3beb-4b40-ab3e-bb65ad7d4a00",
+          "WorkclassName": "Z NOT USED - Manufacturing(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3eebcc77-d576-466d-80d9-e321ff9d9360",
+          "WorkclassName": "Z NOT USED - Medical Care(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "49e44386-aa3a-4556-928d-18da3751199f",
+          "WorkclassName": "Z NOT USED - Medical Office(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d540e049-1986-4fa7-a67d-19550cdecf83",
+          "WorkclassName": "Z NOT USED - M-EVAPORATOR COIL REPLACEMENT ONLY ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f943a00-b2a0-4f06-a698-f04321d0ec87",
+          "WorkclassName": "Z NOT USED - M-FURNACE REPLACEMENT ONLY ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c4bdb59f-07e6-4eab-8a1a-4b605eb8f686",
+          "WorkclassName": "Z NOT USED - Mono-Pole",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c1b3a895-56c5-4bc6-b6bd-eebabb6f2996",
+          "WorkclassName": "Z NOT USED - Monument Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5750cbd1-4baf-41f2-b86b-9fa2b7f84444",
+          "WorkclassName": "Z NOT USED - Movement Control Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ece0ab30-4d97-4f0a-a063-e0bea52f2a7e",
+          "WorkclassName": "Z NOT USED - Multitenant Monument Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1a3595b3-23b0-4ea6-87f4-70e8577db1ae",
+          "WorkclassName": "Z NOT USED - Multitenant Wall Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0469bda5-08ab-4d7e-a9dc-4d85c42b68fd",
+          "WorkclassName": "Z NOT USED - New",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "49e615e8-5bd6-4cf9-8014-a6109b2956f0",
+          "WorkclassName": "Z NOT USED - New Industrial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2db7e1dc-5e79-4bca-a4a9-99283f411ddf",
+          "WorkclassName": "Z NOT USED - New Monument Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3a7db1e7-9d9d-46a0-bd93-0818bef287e0",
+          "WorkclassName": "Z NOT USED - New Pole Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "16d70e93-7622-4a76-a6f4-6283da819c1e",
+          "WorkclassName": "Z NOT USED - Nursing Home(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1d29351f-b04a-49f0-8fb9-ca04703d81ff",
+          "WorkclassName": "Z NOT USED - Occupant Load Decrease",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f5fa3eb0-3f4a-4bdd-bff2-6908135a3a72",
+          "WorkclassName": "Z NOT USED - Offices",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9b1bd707-adf4-4507-b819-87e1e2c7badd",
+          "WorkclassName": "Z NOT USED - Outside In-Ground",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9226ff64-702b-4a89-94c6-cefb8e51cb46",
+          "WorkclassName": "Z NOT USED - Parking Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "15c7d29b-c553-4d75-b0bb-2a502e9eb069",
+          "WorkclassName": "Z NOT USED - Permanent Real Estate Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ac8becdb-837f-471a-b184-a5cdcec6ed58",
+          "WorkclassName": "Z NOT USED - Pole Mounted Banner",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7c6d2136-1647-4884-b5f6-23c08ed6a809",
+          "WorkclassName": "Z NOT USED - Pole Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f2a0a309-a5eb-4675-bfe3-9722cdb2c1c6",
+          "WorkclassName": "Z NOT USED - Portable Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "da878d18-1e49-449a-94b5-fb37a40fa034",
+          "WorkclassName": "Z NOT USED - Portable Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e0fd02fd-03a5-426b-a151-912323c88582",
+          "WorkclassName": "Z NOT USED - P-WATER DISTRIBUTION PIPING ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1ba822eb-f66c-4d1d-a70c-08e6522c8211",
+          "WorkclassName": "Z NOT USED - P-WATER RELAY/ MAIN",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fdfd9ed0-4537-41ee-9d04-c27ad422864e",
+          "WorkclassName": "Z NOT USED - Pylon Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "49032d22-7b34-45cc-b672-dcc31f1abbc4",
+          "WorkclassName": "Z NOT USED - Real Estate/For Lease Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "56473a99-002c-4c44-a228-77e1a71c0183",
+          "WorkclassName": "Z NOT USED - Realtor(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "94b7cb5d-d1aa-484e-a1a8-476bdc7a3d27",
+          "WorkclassName": "Z NOT USED - Repair ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2e81ef01-fd91-4702-b85f-e987830d5273",
+          "WorkclassName": "Z NOT USED - Replace",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d7c1836c-670e-4417-a056-98ca851ec7e6",
+          "WorkclassName": "Z NOT USED - Residential Addition/Alteration",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "56e95477-36f7-4248-8437-11d17fafdf75",
+          "WorkclassName": "Z NOT USED - Residential Arbor (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2ba1b38c-b562-4840-ab60-99994af19cd3",
+          "WorkclassName": "Z NOT USED - Residential Cabana (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5887a5d6-960e-40a2-b13b-3c9318d026b6",
+          "WorkclassName": "Z NOT USED - Residential Carport (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "4d27268a-ba9b-4c8d-82f6-8b1349dcb05c",
+          "WorkclassName": "Z NOT USED - Residential Drive Approach",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "20851543-595b-494e-bb90-1db43b028cf7",
+          "WorkclassName": "Z NOT USED - Residential Fence (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b9097dd2-52b5-4648-a5a6-b8318e5a2f23",
+          "WorkclassName": "Z NOT USED - Residential Fence-Masonry",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e623ebc4-8a89-4904-96b3-ac7907a33c51",
+          "WorkclassName": "Z NOT USED - Residential Fire Sprinkler",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "aeb74340-e7c0-485c-8e39-786726e318fc",
+          "WorkclassName": "Z NOT USED - Residential Garage (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a6f49a87-f6ac-4eee-a849-c6e765bcc522",
+          "WorkclassName": "Z NOT USED - Restaurant(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d35c4cde-5d2e-4fea-a5f7-b6adfd1c2ee1",
+          "WorkclassName": "Z NOT USED - Retail(NOT IN USE)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9989a14f-f7b8-4d18-991a-5bbd1320b89d",
+          "WorkclassName": "Z NOT USED - School(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5df79ee3-1e58-4dcd-9203-a78501e8d8f4",
+          "WorkclassName": "Z NOT USED - Solar Panel Mechanical(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c48507ea-583d-4421-be76-7611f4d91bd8",
+          "WorkclassName": "Z NOT USED - Solar Panels (NOT IN USE)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "43df62e4-2067-431a-9455-76955182a636",
+          "WorkclassName": "Z NOT USED - Solar Water Heater (NOT IN USE)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "22cba3e4-484c-42ad-8350-ac121beaa0c4",
+          "WorkclassName": "Z NOT USED - Subdivision (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "36028d3b-ae71-4dbd-895f-065f6676645c",
+          "WorkclassName": "Z NOT USED - Temporary Real Estate Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e5fc847d-952a-4a76-87e9-596c97b3f4df",
+          "WorkclassName": "Z NOT USED - Tenant Identification Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "6bd5e3e0-7e2e-45fa-8701-241cb2d688f8",
+          "WorkclassName": "Z NOT USED - T-Pole",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3b26cb6a-b67b-4383-a686-f994af64056c",
+          "WorkclassName": "Z NOT USED - Travel(NOT IS USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ecff67f7-0089-4990-85eb-9be89a01e1bf",
+          "WorkclassName": "Z NOT USED - Wall Plaque Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9ffae9e8-6324-4a38-a85a-65ea2094867a",
+          "WorkclassName": "Z NOT USED - Wall Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cd54b03f-fc95-456f-af52-fbc65419cd23",
+          "WorkclassName": "Z NOT USED - Warehouse(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "292c5cee-d627-4249-8706-893f366fc28c",
+          "WorkclassName": "Z NOT USED - Whole Sale(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "25e61d88-d045-40d2-a8f1-d9af987b8103",
+          "WorkclassName": "Z NOT USED - Window Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "15dd4b8b-3d01-4802-9145-3735630b46e2",
+          "WorkclassName": "Z NOT USED EL - TEMPORARY ELECTRICAL POWER RELEASE",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c3ea58b5-a815-43d2-a1ec-876d21c883aa",
+          "WorkclassName": "Z NOT USED Inside Residence",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "71044ff2-dde0-4a74-aa0c-65ee4123a6ec",
+      "PermitTypeName": "Accessory Building",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "98c3764a-31f1-4cf2-8ce5-0635a8a000ee",
+          "WorkclassName": "Commercial Accessory Building",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "06822bdc-9c14-4c2b-b75f-79a9932f7946",
+          "WorkclassName": "Residential Accessory Building",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9b4c325d-e397-427d-bc9e-fa29d7f21f67",
+          "WorkclassName": "Z NOT USED - Commercial Arbor (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c1b62d5c-6a6a-4d17-bc2d-99d456e87cff",
+          "WorkclassName": "Z NOT USED - Commercial Cabana (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "77305a4f-39c3-47ae-b3f1-e577ada1754d",
+          "WorkclassName": "Z NOT USED - Commercial Carport (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "16fa70bd-4be4-48ee-b124-e789356e8385",
+          "WorkclassName": "Z NOT USED - Commercial Garage (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "56e95477-36f7-4248-8437-11d17fafdf75",
+          "WorkclassName": "Z NOT USED - Residential Arbor (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2ba1b38c-b562-4840-ab60-99994af19cd3",
+          "WorkclassName": "Z NOT USED - Residential Cabana (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5887a5d6-960e-40a2-b13b-3c9318d026b6",
+          "WorkclassName": "Z NOT USED - Residential Carport (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "aeb74340-e7c0-485c-8e39-786726e318fc",
+          "WorkclassName": "Z NOT USED - Residential Garage (NOT USED)",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "21340d36-4a10-e0e0-b7b0-db5d50cb673a",
+      "PermitTypeName": "Addendum",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "12768b58-4cc6-610c-e701-5e40c8bb9948",
+          "WorkclassName": "Addendum",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "0df8953e-ef4a-4fb7-866c-b86d48d7c186",
+      "PermitTypeName": "Building Miscellaneous ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ae9d8d61-d550-4463-b51b-0b1db4ea96b2",
+          "WorkclassName": "Commercial Addition/Alteration",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7ee240f5-1aa5-42ce-a0bf-bac7f5703a15",
+          "WorkclassName": "Concrete Flatwork",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d7c1836c-670e-4417-a056-98ca851ec7e6",
+          "WorkclassName": "Z NOT USED - Residential Addition/Alteration",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "d6ad022a-3243-4958-8c6e-fa865a8e41d9",
+      "PermitTypeName": "Certificate of Occupancy",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ebb4407f-4a2b-411e-9f49-32aa66b19b59",
+          "WorkclassName": "CO",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fcff1f07-5891-4b94-bc34-d394e5ec350a",
+          "WorkclassName": "Z NOT USED - CO Aircraft",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "19c60a5b-50b0-4a8d-8078-e5a1fb567ff0",
+          "WorkclassName": "Z NOT USED - CO Assembly",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7f7137b2-2633-4012-af55-8eb257035958",
+          "WorkclassName": "Z NOT USED - CO Auto",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "350e2e30-2644-4010-b0fa-8bbf3fef3f01",
+          "WorkclassName": "Z NOT USED - CO Education",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "612dff60-70a5-4623-b116-297746672fdf",
+          "WorkclassName": "Z NOT USED - CO Food Establishment",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "31278d09-8b1f-442e-9b16-1c22a6407918",
+          "WorkclassName": "Z NOT USED - CO Industrial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5c4d586b-70fb-4e24-b09a-1d715bd4d8b0",
+          "WorkclassName": "Z NOT USED - CO Lodging ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "147c8303-d10a-4181-ad8d-a1b69071850e",
+          "WorkclassName": "Z NOT USED - CO Medical",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e87ab9dc-e3ca-4672-adba-ea6322ac200c",
+          "WorkclassName": "Z NOT USED - CO Multifamily",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f45f13a-a23f-422a-972b-510a233c100a",
+          "WorkclassName": "Z NOT USED - CO Office",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b212361c-bcfa-4018-8e01-b20efb2b4915",
+          "WorkclassName": "Z NOT USED - CO Retail",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d39ae0c3-01e2-4956-8549-b1f693465b95",
+          "WorkclassName": "Z NOT USED - CO Townhome ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ac5ad727-5242-4e61-952a-1af3552c1292",
+          "WorkclassName": "Z NOT USED - CO Warehouse",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "A5E08B4B-42FD-480F-B3AD-3170E7371F1B",
+          "WorkclassName": "Z NOT USED - CO Wholesale",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "d1bed415-af5b-4375-91f6-1440c66fa8f9",
+      "PermitTypeName": "Clean and Show",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a6e339fd-4a7c-4108-a67d-d6f63e7a838d",
+          "WorkclassName": "Clean & Show",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "0ca907c8-392e-4220-abb0-c3c99089c544",
+      "PermitTypeName": "Commercial Building Permits",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a6e339fd-4a7c-4108-a67d-d6f63e7a838d",
+          "WorkclassName": "Clean & Show",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1489e7cd-2a0f-41b9-a814-95eae2a19d11",
+          "WorkclassName": "New Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b1c8e10e-cdcc-450b-bf16-43669619fd85",
+          "WorkclassName": "New Multi-Family",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "620e029a-5a8c-4523-bdfd-78df35ca95da",
+          "WorkclassName": "Remodel/Finish-Out",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "dfad6883-d3fb-4967-bdc2-7ec254cfe73a",
+          "WorkclassName": "Z NOT USED - Finish Out (NOT IN USE)",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "351f9a05-def5-4491-ab7d-6f6e3e01ad14",
+      "PermitTypeName": "Commercial Electrical",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f8a51cb0-f948-47d7-bdd5-1f7a13b07bd3",
+          "WorkclassName": "Electrical Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1d0d7a28-b86d-347c-e0ed-fbeb5735870c",
+          "WorkclassName": "Electrical Generator - Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8fbf58f5-6403-4dcb-b62e-24334cfb7238",
+          "WorkclassName": "Electrical Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2f463edc-ac0b-6511-3c70-c3337bcd4593",
+          "WorkclassName": "Electrical Service Repair/Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f47a94e-138a-4cce-ba9a-7606309ae7ef",
+          "WorkclassName": "Electrical Service/Panel Upgrade",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e792ea91-4abf-4b09-9079-d495c3033795",
+          "WorkclassName": "Z NOT USED - EL - TEMPORARY ELECTRICAL POLE",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0469bda5-08ab-4d7e-a9dc-4d85c42b68fd",
+          "WorkclassName": "Z NOT USED - New",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "d833532e-e222-42c7-970a-3b40d08b8591",
+      "PermitTypeName": "Commercial Mechanical",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "563a6805-86f7-251d-799c-ca1eaccb05d6",
+          "WorkclassName": "Mechanical Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "25252a49-4233-428c-9b20-188998350bb9",
+          "WorkclassName": "Mechanical HVAC Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ebabb2ba-2f23-4739-9bfb-fbb3485e0997",
+          "WorkclassName": "Z NOT USED - M-AC CONDESING UNIT REPLACEMENT",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d540e049-1986-4fa7-a67d-19550cdecf83",
+          "WorkclassName": "Z NOT USED - M-EVAPORATOR COIL REPLACEMENT ONLY ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f943a00-b2a0-4f06-a698-f04321d0ec87",
+          "WorkclassName": "Z NOT USED - M-FURNACE REPLACEMENT ONLY ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0469bda5-08ab-4d7e-a9dc-4d85c42b68fd",
+          "WorkclassName": "Z NOT USED - New",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2e81ef01-fd91-4702-b85f-e987830d5273",
+          "WorkclassName": "Z NOT USED - Replace",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "e584ea51-4c4f-4962-bb52-14c0ad6215f5",
+      "PermitTypeName": "Commercial Plumbing",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "474a10f0-80b1-4b04-8b99-eab87ad6918e",
+          "WorkclassName": "Gas Repair/Release",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f8194d8-29f0-4bd3-a9f3-71accb6e977b",
+          "WorkclassName": "Plumbing Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f89bb30e-162f-41d8-ae64-abe100be8dcf",
+          "WorkclassName": "Plumbing Backflow Device",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f12415d4-190c-47f8-8a21-ef12f6e8c3b8",
+          "WorkclassName": "SLAB LEAK",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "436e6fd2-1e59-494d-a93e-ff1bb673e4ab",
+          "WorkclassName": "Water Heater Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "53002f5e-f326-4024-8aaa-8077060551c8",
+          "WorkclassName": "Water or Sewer Relay",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1ba822eb-f66c-4d1d-a70c-08e6522c8211",
+          "WorkclassName": "Z NOT USED - P-WATER RELAY/ MAIN",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2e81ef01-fd91-4702-b85f-e987830d5273",
+          "WorkclassName": "Z NOT USED - Replace",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "7d818faa-70f6-4a3f-987f-ce60429a3eab",
+      "PermitTypeName": "Community Garage Sale",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fe6d6b27-a0cd-4362-ac0b-ddb7fd6a448a",
+          "WorkclassName": "Booth",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "24abcb31-2521-4154-848a-6d752ddb2620",
+      "PermitTypeName": "Demolition",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "0dd2a00e-6fb8-4181-809b-2e0f4b14afe0",
+      "PermitTypeName": "Fence",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "20851543-595b-494e-bb90-1db43b028cf7",
+          "WorkclassName": "Z NOT USED - Residential Fence (NOT USED)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b9097dd2-52b5-4648-a5a6-b8318e5a2f23",
+          "WorkclassName": "Z NOT USED - Residential Fence-Masonry",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "67fa1cd4-fb01-4883-9696-fea5e3b66851",
+      "PermitTypeName": "Fire Protection Permit",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cd1217f5-0fe5-1581-421d-02ee87492cea",
+          "WorkclassName": "Access Control",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7bc6ec5c-7bda-dcd3-8688-d7d53651f50a",
+          "WorkclassName": "Fire Alarm",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "60974de4-8f3e-334b-1cce-6a07ba4d57cb",
+          "WorkclassName": "Fire Sprinkler",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "48e73f0a-f65c-4eb7-9802-21f76e9713be",
+          "WorkclassName": "Fire Sprinkler System Underground",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "89cbbefe-23ab-4cc2-8ba3-8202d96e4686",
+          "WorkclassName": "Flow Test",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a0dcc100-cd4f-4da4-db00-0c8b698fb132",
+          "WorkclassName": "Kitchen Hood System",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "97d16431-b23d-4484-9605-91814bd115ee",
+          "WorkclassName": "Pyrotechnical Special Effects",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2590768d-0d5d-44d2-9286-89cbdbf0e8e7",
+          "WorkclassName": "Security Gates",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b82ca24b-c3e3-4ee0-8580-d77c0d6b27a9",
+          "WorkclassName": "Tents",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "81a90f5d-ab7f-4fd5-8343-e05e18c2fc58",
+          "WorkclassName": "Z NOT USED - Compressed Natural Gas",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1d29351f-b04a-49f0-8fb9-ca04703d81ff",
+          "WorkclassName": "Z NOT USED - Occupant Load Decrease",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e623ebc4-8a89-4904-96b3-ac7907a33c51",
+          "WorkclassName": "Z NOT USED - Residential Fire Sprinkler",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "5cbb33c3-1023-493b-af9c-21ec6e39f155",
+      "PermitTypeName": "Foundation Repair",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "db5271b6-b017-403d-a935-7cbca0fd75b6",
+      "PermitTypeName": "Infrastructure Construction CIP",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8e449f74-ae43-48b9-b355-2065d78179b3",
+          "WorkclassName": "Right Of Way Franchise/CTP",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "23f65556-1c92-4417-952c-dbeeaa3f7224",
+          "WorkclassName": "Right Of Way General",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f07a5007-4701-4ac8-b7df-9f62f46e164f",
+          "WorkclassName": "Right Of Way Lane Closure",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "5d59bb68-66d4-413c-abcc-bd3126338f1c",
+      "PermitTypeName": "Infrastructure Construction PD",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3a8ff664-89fb-42b6-956e-9e92da913d30",
+          "WorkclassName": "Right Of Way Development",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "23f65556-1c92-4417-952c-dbeeaa3f7224",
+          "WorkclassName": "Right Of Way General",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "194cd756-bf0b-42f4-bf23-46346fc954f5",
+          "WorkclassName": "Right Of Way Town Maintenance",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "7902acc8-4c5f-4023-b58d-3944e8bd3d88",
+      "PermitTypeName": "Irrigation",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ae9d8d61-d550-4463-b51b-0b1db4ea96b2",
+          "WorkclassName": "Commercial Addition/Alteration",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d7c1836c-670e-4417-a056-98ca851ec7e6",
+          "WorkclassName": "Z NOT USED - Residential Addition/Alteration",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "858e1626-18a6-4753-be4e-57bf43533c49",
+      "PermitTypeName": "Portable Building",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "864c1369-c4e7-4472-8519-249a75636fa0",
+          "WorkclassName": "Sales Trailer",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "708fd00c-4e75-4a64-b836-27ed4216bc5f",
+      "PermitTypeName": "Residential Building Permits",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7ee240f5-1aa5-42ce-a0bf-bac7f5703a15",
+          "WorkclassName": "Concrete Flatwork",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a8f65621-fe36-4c2d-a742-0296e0bb67f3",
+          "WorkclassName": "New Duplex",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b1c8e10e-cdcc-450b-bf16-43669619fd85",
+          "WorkclassName": "New Multi-Family",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0e564895-5229-4c0d-94f5-dfb16e79fced",
+          "WorkclassName": "New Single Family Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ac5f10ab-1871-46b7-8f09-c5ec8f00092c",
+          "WorkclassName": "New Townhomes",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cb64d195-9c7e-4917-af06-70ec91fcb981",
+          "WorkclassName": "Residential Remodel",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "39b9a07c-436b-4f52-8807-5c435ee69319",
+          "WorkclassName": "Window Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d8efd94c-1781-4d22-8373-836315d044a4",
+          "WorkclassName": "Z NOT USED - Condominiums",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "13bcf3f1-e34b-4223-a6fe-c2fd5a3fc7dd",
+      "PermitTypeName": "Residential Electrical",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f8a51cb0-f948-47d7-bdd5-1f7a13b07bd3",
+          "WorkclassName": "Electrical Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "45d8eb70-a2d0-f77c-9bc4-904118021318",
+          "WorkclassName": "Electrical Generator - Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8fbf58f5-6403-4dcb-b62e-24334cfb7238",
+          "WorkclassName": "Electrical Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f47a94e-138a-4cce-ba9a-7606309ae7ef",
+          "WorkclassName": "Electrical Service/Panel Upgrade",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "709ee605-a02a-4bb7-b477-bffb2de1aa1b",
+          "WorkclassName": "Z NOT USED - EL - ELEC GROUNDING-BONDING SYSTEM",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9d904e60-5370-4a2f-8eaa-3414a844b967",
+          "WorkclassName": "Z NOT USED - EL - ELEC LIGHTNING- PROTECTION ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e792ea91-4abf-4b09-9079-d495c3033795",
+          "WorkclassName": "Z NOT USED - EL - TEMPORARY ELECTRICAL POLE",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0469bda5-08ab-4d7e-a9dc-4d85c42b68fd",
+          "WorkclassName": "Z NOT USED - New",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "15dd4b8b-3d01-4802-9145-3735630b46e2",
+          "WorkclassName": "Z NOT USED EL - TEMPORARY ELECTRICAL POWER RELEASE",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "9fcf0bf6-8bb7-4845-a7c5-60bac0ff78d3",
+      "PermitTypeName": "Residential Mechanical",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "563a6805-86f7-251d-799c-ca1eaccb05d6",
+          "WorkclassName": "Mechanical Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c230caa2-c70d-4d22-be1d-6666aecef902",
+          "WorkclassName": "Mechanical Duct Work Only",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "25252a49-4233-428c-9b20-188998350bb9",
+          "WorkclassName": "Mechanical HVAC Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b8e11ef4-46f9-444c-974f-656f45158e2c",
+          "WorkclassName": "Mechanical Miscellaneous",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ebabb2ba-2f23-4739-9bfb-fbb3485e0997",
+          "WorkclassName": "Z NOT USED - M-AC CONDESING UNIT REPLACEMENT",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d540e049-1986-4fa7-a67d-19550cdecf83",
+          "WorkclassName": "Z NOT USED - M-EVAPORATOR COIL REPLACEMENT ONLY ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f943a00-b2a0-4f06-a698-f04321d0ec87",
+          "WorkclassName": "Z NOT USED - M-FURNACE REPLACEMENT ONLY ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0469bda5-08ab-4d7e-a9dc-4d85c42b68fd",
+          "WorkclassName": "Z NOT USED - New",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2e81ef01-fd91-4702-b85f-e987830d5273",
+          "WorkclassName": "Z NOT USED - Replace",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "4bd71b4e-ca98-4cbd-ac68-2f503bd5ca08",
+      "PermitTypeName": "Residential Plumbing",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d8a85e9a-ebd2-4645-82ca-3803234d92b2",
+          "WorkclassName": "DRAINAGE PIPING",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "474a10f0-80b1-4b04-8b99-eab87ad6918e",
+          "WorkclassName": "Gas Repair/Release",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f8194d8-29f0-4bd3-a9f3-71accb6e977b",
+          "WorkclassName": "Plumbing Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f89bb30e-162f-41d8-ae64-abe100be8dcf",
+          "WorkclassName": "Plumbing Backflow Device",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7c40b5ea-ce9d-469b-8902-ee860024a4b3",
+          "WorkclassName": "SLAB LEAK ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "436e6fd2-1e59-494d-a93e-ff1bb673e4ab",
+          "WorkclassName": "Water Heater Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "53002f5e-f326-4024-8aaa-8077060551c8",
+          "WorkclassName": "Water or Sewer Relay",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e0fd02fd-03a5-426b-a151-912323c88582",
+          "WorkclassName": "Z NOT USED - P-WATER DISTRIBUTION PIPING ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1ba822eb-f66c-4d1d-a70c-08e6522c8211",
+          "WorkclassName": "Z NOT USED - P-WATER RELAY/ MAIN",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "94b7cb5d-d1aa-484e-a1a8-476bdc7a3d27",
+          "WorkclassName": "Z NOT USED - Repair ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2e81ef01-fd91-4702-b85f-e987830d5273",
+          "WorkclassName": "Z NOT USED - Replace",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "93ad9621-fce9-41e4-98f1-cd395852c0f0",
+      "PermitTypeName": "Retaining Walls",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "22cba3e4-484c-42ad-8350-ac121beaa0c4",
+          "WorkclassName": "Z NOT USED - Subdivision (NOT USED)",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "be0182aa-bacf-4f64-9d1c-2ec89a326293",
+      "PermitTypeName": "Right-of-Way",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8eb0c192-70bf-4123-8ac2-0c476e670ebb",
+          "WorkclassName": "Franchise",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "09946b73-b9f8-4535-b16f-baf2d5ef74c2",
+          "WorkclassName": "General",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "aac3a6ef-eabe-428c-b996-2a0615c388fa",
+      "PermitTypeName": "Roof",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "f5b7e5c5-eda6-424f-ab93-05a139752c37",
+      "PermitTypeName": "Short Term Rental",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00d82983-298d-47d6-b0ab-b236628be5d1",
+          "WorkclassName": "SHORT TERM RENTAL ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "17562138-0d88-3550-1bf7-fde79d12125a",
+      "PermitTypeName": "Sign",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ace24e6e-e433-9c8c-4a70-e8e219b0167b",
+          "WorkclassName": "Attached Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5b49fab0-29ef-844f-0997-57a1a5ed7a27",
+          "WorkclassName": "Detached Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "31e9e3e8-1ebd-8291-9624-25ebadee3979",
+          "WorkclassName": "Temporary Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "345ffd52-d32e-40f1-9d4c-39a7cb0ade7d",
+      "PermitTypeName": "Solar Panel - PV System",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "91e96485-8ada-4723-8ffe-d6431a928124",
+          "WorkclassName": "Commercial - Solar Panel ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "57028289-3150-4bdf-9687-f7129664f1a5",
+          "WorkclassName": "Residential - Solar Panel ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5df79ee3-1e58-4dcd-9203-a78501e8d8f4",
+          "WorkclassName": "Z NOT USED - Solar Panel Mechanical(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c48507ea-583d-4421-be76-7611f4d91bd8",
+          "WorkclassName": "Z NOT USED - Solar Panels (NOT IN USE)",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "43df62e4-2067-431a-9455-76955182a636",
+          "WorkclassName": "Z NOT USED - Solar Water Heater (NOT IN USE)",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "d100582a-c888-46ed-88fb-357c05ff59c6",
+      "PermitTypeName": "Swimming Pools and Spas",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "15f749fc-e9f7-4027-bdb4-c022d690f7db",
+          "WorkclassName": "Residential - Spa/ Hot Tub/ Fountain ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2da83366-32d1-4da7-9a75-1a86e6a592ef",
+          "WorkclassName": "Z NOT USED - In Ground(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "db52829b-87ad-434f-ac2d-fbb9e5dd7c93",
+      "PermitTypeName": "Temporary Use",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "62891bcf-3fbc-4edd-a776-4c8f11d996e9",
+          "WorkclassName": "Z NOT USED - COVID TEMP OUTDOOR DINNING PERMIT  ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fb0f9fa1-a3df-4c43-97b4-23bb5356d69d",
+          "WorkclassName": "Z NOT USED - Industrial",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "a8e16ec6-0b2c-4a76-9dc8-31c606c32a5a",
+      "PermitTypeName": "Tree Permit",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "18a83087-d9ed-4a14-a654-aa9e2708a4dc",
+          "WorkclassName": "Tree Maintenance",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1ca1d0a8-c264-4bf3-abd0-a2b5fb72d6e6",
+          "WorkclassName": "Tree Pruning/Trimming",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "c3eac74d-7fed-42e1-aac3-86cb44ea40f2",
+      "PermitTypeName": "Z - SIGN Construction (NOT USED)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c4c2444a-b2b7-4eea-a22c-0fa5d6a1e90f",
+          "WorkclassName": "Z NOT USED - Construction Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "798b4752-5b51-405a-82d4-0e8f08d7d579",
+      "PermitTypeName": "Z - SIGN Grand Opening Banner (NOT USED)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e851e5f1-2e7b-4532-b1fc-ce959fffca14",
+          "WorkclassName": "Z NOT USED - Banner",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "99a1d6cc-5971-48fe-bff1-281b444ae928",
+      "PermitTypeName": "Z - SIGN Monument Sign (NOT USED)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fce30302-70fd-447e-ac19-fb6b997fb83f",
+          "WorkclassName": "Existing Monument Sign Reface",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2db7e1dc-5e79-4bca-a4a9-99283f411ddf",
+          "WorkclassName": "Z NOT USED - New Monument Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "86ea527d-3171-4781-9732-5a6b91eea376",
+      "PermitTypeName": "Z - SIGN Movement Control Sign (NOT USED)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5750cbd1-4baf-41f2-b86b-9fa2b7f84444",
+          "WorkclassName": "Z NOT USED - Movement Control Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "178e24e4-6f0d-4a35-b262-933ad35b64a3",
+      "PermitTypeName": "Z - SIGN Pole Sign (NOT USED)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3e5285c1-7f78-4acf-a42f-5a97a4b527f9",
+          "WorkclassName": "Z NOT USED - Existing Pole Sign Reface",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3a7db1e7-9d9d-46a0-bd93-0818bef287e0",
+          "WorkclassName": "Z NOT USED - New Pole Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "0fc8bca5-a975-4c7d-b9fb-afeaa407ae34",
+      "PermitTypeName": "Z - SIGN Real Estate/For Lease (NOT USED)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "49032d22-7b34-45cc-b672-dcc31f1abbc4",
+          "WorkclassName": "Z NOT USED - Real Estate/For Lease Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "9c6b2fb8-44b0-4b06-9d2a-6e4c69352b8b",
+      "PermitTypeName": "Z - SIGN Wall Sign (NOT USED)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5e7ffa01-8021-45a0-ae81-8c91ffd97844",
+          "WorkclassName": "Z NOT USED - Awning Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ca7a7d90-67e6-494b-9446-ce7e04891ac6",
+          "WorkclassName": "Z NOT USED - Building Identification Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e5fc847d-952a-4a76-87e9-596c97b3f4df",
+          "WorkclassName": "Z NOT USED - Tenant Identification Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "b2034399-7def-4277-8963-df3e482f49e3",
+      "PermitTypeName": "Z NOT USED - Cell Tower",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c4bdb59f-07e6-4eab-8a1a-4b605eb8f686",
+          "WorkclassName": "Z NOT USED - Mono-Pole",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "b9785a9b-12e2-4ad1-95f4-c4b0c4f37b5c",
+      "PermitTypeName": "Z NOT USED - FOUNDATION-NEW",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "6bd077fd-037e-4233-8800-59a2110d9ec7",
+      "PermitTypeName": "Z NOT USED - SMALL CELL",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8b85951e-b652-48a5-98da-59778cb755b3",
+          "WorkclassName": "Small Cell",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "1037098d-b6bc-4a12-8f25-1b066dcc8f71",
+      "PermitTypeName": "Z-CO Dental(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "4ebaf048-1c00-4b53-a825-630b1952da2f",
+          "WorkclassName": "Services",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9b838275-4d86-4e8c-912e-6cae6d474ed3",
+          "WorkclassName": "Z NOT USED - Dental Office(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "2274a155-5fe5-40e9-b5d8-1987efd8925a",
+      "PermitTypeName": "Z-CO Industrial(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fb0f9fa1-a3df-4c43-97b4-23bb5356d69d",
+          "WorkclassName": "Z NOT USED - Industrial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3e5bb968-3beb-4b40-ab3e-bb65ad7d4a00",
+          "WorkclassName": "Z NOT USED - Manufacturing(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "a2cecc82-7f6c-4ab2-b431-65b4829cbeb6",
+      "PermitTypeName": "Z-CO Institutional(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3eebcc77-d576-466d-80d9-e321ff9d9360",
+          "WorkclassName": "Z NOT USED - Medical Care(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "16d70e93-7622-4a76-a6f4-6283da819c1e",
+          "WorkclassName": "Z NOT USED - Nursing Home(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "c64f876e-83f5-48fe-b4a2-8d66a27a07da",
+      "PermitTypeName": "Z-CO Manufacturing(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fb0f9fa1-a3df-4c43-97b4-23bb5356d69d",
+          "WorkclassName": "Z NOT USED - Industrial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f5fa3eb0-3f4a-4bdd-bff2-6908135a3a72",
+          "WorkclassName": "Z NOT USED - Offices",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cd54b03f-fc95-456f-af52-fbc65419cd23",
+          "WorkclassName": "Z NOT USED - Warehouse(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "9cdd1831-c303-4d12-acae-d37c40e7fec6",
+      "PermitTypeName": "Z-CO Medical(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3eebcc77-d576-466d-80d9-e321ff9d9360",
+          "WorkclassName": "Z NOT USED - Medical Care(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "49e44386-aa3a-4556-928d-18da3751199f",
+          "WorkclassName": "Z NOT USED - Medical Office(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "16d70e93-7622-4a76-a6f4-6283da819c1e",
+          "WorkclassName": "Z NOT USED - Nursing Home(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "ea428636-18f7-43ea-92b7-6f308ed5fc4e",
+      "PermitTypeName": "Z-CO Movie Theater(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "c8837ded-4da6-49ff-b687-4772e66f9bf3",
+      "PermitTypeName": "Z-CO Multifamily(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b1c8e10e-cdcc-450b-bf16-43669619fd85",
+          "WorkclassName": "New Multi-Family",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "fa2eff80-7147-4a1e-8154-19cfc31fb30b",
+      "PermitTypeName": "Z-CO Restaurant(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "a1512aa6-910e-4bb1-a700-588e1682745d",
+      "PermitTypeName": "Z-CO Retail(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "0da7938f-4fe8-4e76-ad68-9b7756be1b49",
+      "PermitTypeName": "Z-CO Service(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "fb12bf7a-788c-456f-9a34-3f88a0da1561",
+      "PermitTypeName": "Z-CO Sign Shop(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "275729a4-ee68-4277-9d19-5df02b9e527d",
+      "PermitTypeName": "Z-CO Spa(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "449efb46-2cc5-4d17-a76f-4c6ea7a47cde",
+      "PermitTypeName": "Z-CO Storage Facilities(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cd54b03f-fc95-456f-af52-fbc65419cd23",
+          "WorkclassName": "Z NOT USED - Warehouse(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "b326d959-518b-44ce-af9d-609ef85b5363",
+      "PermitTypeName": "Z-CO Warehouse(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "01d173bd-6f22-4834-9800-b726541c035b",
+          "WorkclassName": "Z NOT USED - General Business(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "fb0f9fa1-a3df-4c43-97b4-23bb5356d69d",
+          "WorkclassName": "Z NOT USED - Industrial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3e5bb968-3beb-4b40-ab3e-bb65ad7d4a00",
+          "WorkclassName": "Z NOT USED - Manufacturing(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "24b2a0fe-3b10-4f08-8359-1d5e54f0e69f",
+      "PermitTypeName": "Z-Commercial Alarm",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "4dc91279-8a9b-4846-8773-80e5542be367",
+          "WorkclassName": "Burglar Alarm",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e89df62d-8b8d-4c3a-8483-5940239eb1ea",
+          "WorkclassName": "Robbery/Panic/Hold Up Alarm",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "b4b22561-41e1-4e28-8ffd-5ccfde478fd2",
+      "PermitTypeName": "Z-Commercial Fence(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "22cba3e4-484c-42ad-8350-ac121beaa0c4",
+          "WorkclassName": "Z NOT USED - Subdivision (NOT USED)",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "f7a9896b-d243-4de7-8576-5db74ecb4f6d",
+      "PermitTypeName": "Z-Commercial Irrigation(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ae9d8d61-d550-4463-b51b-0b1db4ea96b2",
+          "WorkclassName": "Commercial Addition/Alteration",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "66129a32-0b9d-4c3f-a6f0-57b365fdad1b",
+      "PermitTypeName": "Z-COP(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ebb4407f-4a2b-411e-9f49-32aa66b19b59",
+          "WorkclassName": "CO",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "34d438f1-4476-4960-810d-6ef584eaadfa",
+      "PermitTypeName": "Z-Electrical(NOT IN USE)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f47a94e-138a-4cce-ba9a-7606309ae7ef",
+          "WorkclassName": "Electrical Service/Panel Upgrade",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0469bda5-08ab-4d7e-a9dc-4d85c42b68fd",
+          "WorkclassName": "Z NOT USED - New",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "6bd5e3e0-7e2e-45fa-8701-241cb2d688f8",
+          "WorkclassName": "Z NOT USED - T-Pole",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "e6eab142-fdb3-47bd-8fb8-9092d9eb6d89",
+      "PermitTypeName": "Z-Gas Well(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f36ff668-f957-48ef-86db-c5ed6f8df87e",
+          "WorkclassName": "Gas Well",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "2f5b55de-d55f-4d11-baee-f01e2c656e43",
+      "PermitTypeName": "Z-Mechanical(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "0469bda5-08ab-4d7e-a9dc-4d85c42b68fd",
+          "WorkclassName": "Z NOT USED - New",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2e81ef01-fd91-4702-b85f-e987830d5273",
+          "WorkclassName": "Z NOT USED - Replace",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "cd1d3bf9-0616-4817-9c8e-4fd347b044f2",
+      "PermitTypeName": "Z-Moving(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "543651b9-ee18-4bca-b1d4-40bf0d48a59f",
+          "WorkclassName": "Accessory Building",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "dcda0d18-3ea4-499a-98ab-c421308bcaf6",
+      "PermitTypeName": "Z-On-Line: E-Commercial Permit (NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9cce0062-5f1d-4687-ab65-4f62ec9a64b7",
+          "WorkclassName": "Z NOT USED - E-Clean-and-Show(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "ed818897-6a4e-436d-9623-32ebe3d26ecb",
+      "PermitTypeName": "Z-On-Line: E-Electrical Permit(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "52ca1079-a994-4eda-b954-a5a694f83274",
+          "WorkclassName": "Z NOT USED - E-Electric To Pool(NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e792ea91-4abf-4b09-9079-d495c3033795",
+          "WorkclassName": "Z NOT USED - EL - TEMPORARY ELECTRICAL POLE",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "a3012bde-d985-4fb7-9ef4-5ce1b15f8e1b",
+      "PermitTypeName": "Z-On-Line: E-Mechanical Permit (NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "25252a49-4233-428c-9b20-188998350bb9",
+          "WorkclassName": "Mechanical HVAC Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ebabb2ba-2f23-4739-9bfb-fbb3485e0997",
+          "WorkclassName": "Z NOT USED - M-AC CONDESING UNIT REPLACEMENT",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d540e049-1986-4fa7-a67d-19550cdecf83",
+          "WorkclassName": "Z NOT USED - M-EVAPORATOR COIL REPLACEMENT ONLY ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f943a00-b2a0-4f06-a698-f04321d0ec87",
+          "WorkclassName": "Z NOT USED - M-FURNACE REPLACEMENT ONLY ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "220ddc7e-8d77-450b-bb49-e0e0549b6a1d",
+      "PermitTypeName": "Z-On-Line: E-Plumbing Permit(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8f8194d8-29f0-4bd3-a9f3-71accb6e977b",
+          "WorkclassName": "Plumbing Addition/Alteration/Repair",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f89bb30e-162f-41d8-ae64-abe100be8dcf",
+          "WorkclassName": "Plumbing Backflow Device",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f12415d4-190c-47f8-8a21-ef12f6e8c3b8",
+          "WorkclassName": "SLAB LEAK",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "436e6fd2-1e59-494d-a93e-ff1bb673e4ab",
+          "WorkclassName": "Water Heater Replacement",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "940dce2d-e972-486d-8637-ad84fef445a2",
+          "WorkclassName": "Z NOT USED - E-Gasline(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "5353f530-0577-4441-bc4a-89861424c03a",
+      "PermitTypeName": "Z-On-Line: E-Re-Roof Permit(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "a7cc1108-b2fd-402e-ac64-10b6f6441be8",
+          "WorkclassName": "Z NOT USED - E-Re-Roof(NOT IN USE) ",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "7047420b-8ec0-4358-9179-26f9d680be64",
+      "PermitTypeName": "Z-Pet Owner Registration(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "36829083-1fff-4b96-97c0-2c7f743eba12",
+          "WorkclassName": "Cat",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "985019ed-7162-47a5-ad52-4ce26cd7ac3b",
+          "WorkclassName": "Dog",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9c3543a5-73e3-45d1-b88f-7014c35454a5",
+          "WorkclassName": "Ferret",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "98d5124d-21f2-42e1-ba72-2a6362ae3347",
+      "PermitTypeName": "Z-Plumbing(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b30612b1-0c27-404d-b754-7c6cb9043882",
+          "WorkclassName": "Building Addition",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e3bb2b35-777d-456b-8c2f-cdbfc8a3f806",
+          "WorkclassName": "Other",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1620d267-df4d-4b06-9a55-8cfe6ddbdf11",
+          "WorkclassName": "Z NOT USED - Repair (NOT IN USE) ",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "2e81ef01-fd91-4702-b85f-e987830d5273",
+          "WorkclassName": "Z NOT USED - Replace",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "1b0e1e66-f793-4592-aa26-f363ad5f12f7",
+      "PermitTypeName": "Z-Residential Alarm(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "4dc91279-8a9b-4846-8773-80e5542be367",
+          "WorkclassName": "Burglar Alarm",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e89df62d-8b8d-4c3a-8483-5940239eb1ea",
+          "WorkclassName": "Robbery/Panic/Hold Up Alarm",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "e4007893-6257-40a8-a13e-b007a01e6011",
+      "PermitTypeName": "Z-Residential Fence(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "58a1c443-6fe3-4e6b-bbb0-ea85f6e325c2",
+      "PermitTypeName": "Z-Residential Irrigation(NOT IN USE)",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "d7c1836c-670e-4417-a056-98ca851ec7e6",
+          "WorkclassName": "Z NOT USED - Residential Addition/Alteration",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "a139c83c-5a3e-4613-a6ce-cc8f15ede871",
+      "PermitTypeName": "Z-Right of Way(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "3a8ff664-89fb-42b6-956e-9e92da913d30",
+          "WorkclassName": "Right Of Way Development",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "8e449f74-ae43-48b9-b355-2065d78179b3",
+          "WorkclassName": "Right Of Way Franchise/CTP",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "23f65556-1c92-4417-952c-dbeeaa3f7224",
+          "WorkclassName": "Right Of Way General",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f07a5007-4701-4ac8-b7df-9f62f46e164f",
+          "WorkclassName": "Right Of Way Lane Closure",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "194cd756-bf0b-42f4-bf23-46346fc954f5",
+          "WorkclassName": "Right Of Way Town Maintenance",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "22ea541b-98d1-40e6-ad80-ac4006759078",
+      "PermitTypeName": "Z-SIGN",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "cf5c8a4d-5864-4ccc-893d-15845385cf30",
+          "WorkclassName": "Special Event Banner",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5e7ffa01-8021-45a0-ae81-8c91ffd97844",
+          "WorkclassName": "Z NOT USED - Awning Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e851e5f1-2e7b-4532-b1fc-ce959fffca14",
+          "WorkclassName": "Z NOT USED - Banner",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "027bf0de-6516-45b7-9e59-c622804d3085",
+          "WorkclassName": "Z NOT USED - Business Identification Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c4c2444a-b2b7-4eea-a22c-0fa5d6a1e90f",
+          "WorkclassName": "Z NOT USED - Construction Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c1b3a895-56c5-4bc6-b6bd-eebabb6f2996",
+          "WorkclassName": "Z NOT USED - Monument Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "5750cbd1-4baf-41f2-b86b-9fa2b7f84444",
+          "WorkclassName": "Z NOT USED - Movement Control Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ece0ab30-4d97-4f0a-a063-e0bea52f2a7e",
+          "WorkclassName": "Z NOT USED - Multitenant Monument Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "1a3595b3-23b0-4ea6-87f4-70e8577db1ae",
+          "WorkclassName": "Z NOT USED - Multitenant Wall Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "15c7d29b-c553-4d75-b0bb-2a502e9eb069",
+          "WorkclassName": "Z NOT USED - Permanent Real Estate Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7c6d2136-1647-4884-b5f6-23c08ed6a809",
+          "WorkclassName": "Z NOT USED - Pole Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "f2a0a309-a5eb-4675-bfe3-9722cdb2c1c6",
+          "WorkclassName": "Z NOT USED - Portable Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "36028d3b-ae71-4dbd-895f-065f6676645c",
+          "WorkclassName": "Z NOT USED - Temporary Real Estate Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "e5fc847d-952a-4a76-87e9-596c97b3f4df",
+          "WorkclassName": "Z NOT USED - Tenant Identification Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "ecff67f7-0089-4990-85eb-9be89a01e1bf",
+          "WorkclassName": "Z NOT USED - Wall Plaque Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9ffae9e8-6324-4a38-a85a-65ea2094867a",
+          "WorkclassName": "Z NOT USED - Wall Sign",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "25e61d88-d045-40d2-a8f1-d9af987b8103",
+          "WorkclassName": "Z NOT USED - Window Sign",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "04846976-eeb2-45e1-b0fd-b509e8f270b0",
+      "PermitTypeName": "Z-Storm Shelter(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "b2134287-c0c0-459a-8ab4-df3c107279bd",
+          "WorkclassName": "Z NOT USED - Attached Garage",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "7ff3d125-d3d7-407c-9523-37ad0b123089",
+          "WorkclassName": "Z NOT USED - Attached Garage Under Slab",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "6ec1ebb1-4730-47a3-bf43-26a63dca6d94",
+          "WorkclassName": "Z NOT USED - Detached Garage",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9cb0ea27-5b15-49f7-8eff-4214051ec683",
+          "WorkclassName": "Z NOT USED - Detached Garage Under Slab",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "9b1bd707-adf4-4507-b819-87e1e2c7badd",
+          "WorkclassName": "Z NOT USED - Outside In-Ground",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c3ea58b5-a815-43d2-a1ec-876d21c883aa",
+          "WorkclassName": "Z NOT USED Inside Residence",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "b416064f-708b-4750-8ab4-dd60072b4d26",
+      "PermitTypeName": "Z-Water Meter Service(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    },
+    {
+      "PermitTypeId": "8c9e887f-5d73-4877-9f24-a2c710a26e98",
+      "PermitTypeName": "Z-Water Wells(NOT IN USE) ",
+      "PermitName": null,
+      "FriendlyName": null,
+      "WorkClassTemplates": [
+        {
+          "PermitWorkclassId": "",
+          "WorkclassName": "",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "00fa2c00-d31d-44b3-896b-8b73d06e47ad",
+          "WorkclassName": "Commercial",
+          "FriendlyName": null
+        },
+        {
+          "PermitWorkclassId": "c84966bc-81d8-4866-9543-49052c13d45d",
+          "WorkclassName": "Residential",
+          "FriendlyName": null
+        }
+      ]
+    }
+  ],
+  "PermitStatuses": [
+    {
+      "PermitStatusId": "",
+      "Name": "",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "87d4c7f7-80d2-4a52-8b0c-ba269438b55d",
+      "Name": "APPROVED: Payment Required ",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "9592b361-a611-4477-88d8-ffe5ae8f6435",
+      "Name": "Closed Due To Expiration",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "b9821ea1-ad0e-4067-bb0c-267166bf4827",
+      "Name": "CO: In Departmental Review",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "f674deb7-3e15-f7ae-9214-7803f335f300",
+      "Name": "Completed",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "953a526d-e8fd-4b1e-8cc0-a36a89f6c129",
+      "Name": "Disapproved",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "88c421ea-eed9-4757-8d5a-8ace4eba5a80",
+      "Name": "Hold",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "c0eb8deb-cc6e-4e01-b938-0fffbc68e6e2",
+      "Name": "In Review",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "aa633346-0efe-4f5f-bda8-89c08ace2488",
+      "Name": "ISSUED ",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "e4eff589-8e28-4f1e-9849-fe56ff06ec00",
+      "Name": "Received",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "54baf792-de4d-a708-f5d9-61bb40602876",
+      "Name": "Requires Contractor Validation or Registration",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "27e9bc87-a23c-1f50-901c-5049859a9148",
+      "Name": "Resubmittal Required",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "c9b14495-95d7-45e4-9b29-514fc278910b",
+      "Name": "Submitted-Online",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "2afb4e7c-cb75-4ace-9170-b56d051d4aa8",
+      "Name": "VOID",
+      "Description": null
+    },
+    {
+      "PermitStatusId": "f3450287-be51-66fa-2776-b7476a76b674",
+      "Name": "Withdrawn by Applicant",
+      "Description": null
+    }
+  ]
+}
